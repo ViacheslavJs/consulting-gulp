@@ -35,9 +35,11 @@
 }
 
 
-$slide-text_display: block; /* none */
+$slide-text_display: none; /* block; none; */
 .latest-slide {
-  background: #eeeeee; 
+  padding-top: 30px; 
+  padding-bottom: 30px;
+  background: ''; /* #eeeeee; */
   
   &__img:hover { 
     opacity: 0.6;

@@ -57,6 +57,8 @@
   color: #555;
   text-align: center;
   border-radius: 6px; 
+  cursor: default;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));   
   @media screen and (max-width: 370px) {
     width: 295px;

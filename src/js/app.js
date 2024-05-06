@@ -45,7 +45,11 @@ import { accordion } from "./modules/accordion.js";
 accordion();
 
 import { chat } from "./modules/chat.js";
-chat();
+chat({
+
+  closeOutWindow: false,
+
+});
 
 import { support } from "./modules/support.js";
 support({

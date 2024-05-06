@@ -23,7 +23,7 @@ $menu-link-active_color: darken(silver, 10%);
 /*$menu-link-active_color: lighten(#000000, 70%); /**/
 
 $mob-menu_width: 320px; /* 320px; 100%; */
-$mob-menu_bg: #e6e6e6;
+$mob-menu_bg: #fff; /* #e6e6e6; */
 $mob-menu-link_color: #ffffff;
 $mob-menu-item_bg: $elements-style_color;
 $mob-menu-list_width: 100%; /* 100% - if $mob-menu_width: 320px */

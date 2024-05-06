@@ -1,6 +1,6 @@
 /* variables */
-$sections_margin: 0px 0px; 
-$sections_padding: 22px 0; /* 20px 0 */
+$sections_margin: 0; 
+$sections_padding: 0; /* 20px 0 */
 
 /* style page */
 .main--home {
@@ -10,7 +10,7 @@ $sections_padding: 22px 0; /* 20px 0 */
 
 section {
   margin: $sections_margin;
-  padding: $sections_padding; 
+  padding: $sections_padding;
 }
 
 section:nth-child(even) {
@@ -214,6 +214,7 @@ section:nth-child(even) {
 
 /* s-06 */
 .news {
+  padding: 22px 0;
   &__title {           
     /*width: 30%;*/
     margin-top: 0;
@@ -260,6 +261,8 @@ section:nth-child(even) {
 
 /* s-07 */
 .latest {
+  padding: 22px 0;
+  background: #f6f6f8;
   &__inner {
     
   }
@@ -440,7 +443,6 @@ section:nth-child(even) {
 /* module bg-layer */
 $bg-layer-text_color: $color_base;
 $bg-layer_bg-attachment: fixed; /* scroll/fixed */
-$bg-layer_top: 50px; 
 $bg-layer-brand_display: none; /* block/none */
 
 /* module grid-tiles */
@@ -463,11 +465,9 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
 
 
 .bg-layer {
-  position: relative; /* TODO -for &::after */
+  position: relative; /* TODO -for &::after */ 
   max-width: calc(100%);    
-  padding-top: $bg-layer_top;
-  padding-bottom: 10px;
-   
+  padding: 22px 0;   
   background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../img/team-bg.jpg');
   /*background-image: url('../img/bg.jpg');*/
   display: block;
@@ -685,8 +685,8 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
 /***** TODO - module mod-tiles *********************/
 .mod-tiles {     
   max-width: calc(100%); 
-  /*margin-bottom: 10px;*/
-  padding: 50px 0;  
+  /*margin-bottom: 10px;*/ 
+  padding: 22px 0;  
   display: block;
   max-width: 100%;
   min-height: 60vh;  	
@@ -820,6 +820,7 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
 /***** module grid-tiles *********************/
 
 .questions {
+  padding: 22px 0;
   &__title {
     margin-top: 0;
     margin-bottom: 20px; 

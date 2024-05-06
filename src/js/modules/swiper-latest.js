@@ -42,7 +42,7 @@ var swiper = new Swiper(".latest__swiper", {
   },
 
   pagination: {
-    //el: ".swiper-pagination",
+    el: ".swiper-pagination",
     clickable: true,
   },
 

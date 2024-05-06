@@ -1,4 +1,4 @@
-export const chat = () => {
+export const chat = (options) => {
 
 const btnName = 'chat-btn'; // клик-родитель
 const chatName = 'chat-window'; // вспл. окно
@@ -28,17 +28,18 @@ const chatWindow = `.${chatName}`;
     });
   });
 
-  // Закрытие открытого поп-апа при клике вне его и вне родительских элементов
-  document.addEventListener('click', function(event) {
-    parentElems.forEach(parentElem => {
-      const chat = parentElem.querySelector(chatWindow);
-      if (chat && openChat && !chat.contains(event.target) && !parentElem.contains(event.target)) {
-        openChat.classList.remove('chat-active');
-        openChat = null; // Сбрасываем переменную открытого поп-апа
-      }
+  if (options.closeOutWindow === true) {
+    // Закрытие открытого поп-апа при клике вне его и вне родительских элементов
+    document.addEventListener('click', function(event) {
+      parentElems.forEach(parentElem => {
+        const chat = parentElem.querySelector(chatWindow);
+        if (chat && openChat && !chat.contains(event.target) && !parentElem.contains(event.target)) {
+          openChat.classList.remove('chat-active');
+          openChat = null; // Сбрасываем переменную открытого поп-апа
+        }
+      });
     });
-  });
-
+  }
 
 })();
 

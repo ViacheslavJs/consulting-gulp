@@ -275,7 +275,10 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
                       
               </div><!-- mod-tiles-box -->
             </div><!-- container -->
-              
+              <div class="container-swiperNews">
+              @@include('html/components/tape-carousel.html', {})
+              @@include('html/components/swiper-news.html', {})          
+            </div><!-- container --> 
           </section><!-- module mod-tiles -->
           <!-- module mod-tiles -->
         
@@ -325,9 +328,7 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
                 </p>
               </div><!-- container -->   
             </div><!-- container -->      
-            <div class="container-swiperLatest">                            
-              @@include('html/components/swiper-latest.html', {})                
-            </div><!-- container -->                                               
+                                                           
           </section><!-- module s-02 -->
 
           <div class="container">
@@ -388,7 +389,9 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
             </div>
           </div> 
 
-
+<div class="container-swiperLatest">                            
+              @@include('html/components/swiper-latest.html', {})                
+            </div><!-- container -->
            
 
   
@@ -412,10 +415,7 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
           </div></div>
 </section>   
 
-<div class="container-swiperNews">
-              @@include('html/components/tape-carousel.html', {})
-              @@include('html/components/swiper-news.html', {})          
-            </div><!-- container --> 
+
 
 
  @@include('html/section/mode.html', {})

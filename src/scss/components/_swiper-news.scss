@@ -43,7 +43,9 @@ $slide-text_display: none; /* block; none; */
 $slide-link_display: none; /* block; none; */
 
 .news-slide {
-  background: #eeeeee; 
+  padding-top: 30px; 
+  padding-bottom: 30px;
+  background: ''; /* #eee; */
   
   &__img:hover { 
     opacity: 0.7;
