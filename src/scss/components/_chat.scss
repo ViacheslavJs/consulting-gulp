@@ -19,6 +19,7 @@
   cursor: pointer;
   transition: 0.8s;
   animation: chat-anim 0.4s forwards; 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
    
   &--scroll {
     display: none; 
