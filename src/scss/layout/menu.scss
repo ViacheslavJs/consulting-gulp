@@ -1,0 +1,241 @@
+.menu-icon {  
+  display: none;
+  font-size: 27px; 
+  padding: 8px;
+  color: $menu-icon_color;     
+  z-index: 60;
+  border: none; 
+  border-radius: 5px; 
+  background: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &:hover {
+    opacity: 0.6;
+    color: $menu-icon_hover;
+    transition: 0.4s; 
+    cursor: pointer;
+  }
+  @media screen and (max-width: $mobile-big_end-point) {
+    display: block;
+  }
+}
+
+.menu {  
+  display: flex;
+  flex-direction: row;      
+  justify-content: flex-start;          
+  align-items: center;  
+  @include menu;
+  width: $menu_width;  
+  font-weight: 400;
+  /*font-size: 16px;*/                 
+  @media screen and (max-width: $mobile-big_end-point) {
+    display: none;
+  }    
+  
+  &__list {
+    display: flex;
+    flex-direction: row;      
+    justify-content: space-between;             
+    align-items: center; 
+    width: 100%; 
+    padding: 5px;     
+    @media screen and (max-width: $mobile-big_end-point) {
+      display: block;
+    }
+  }
+  
+  &__list-item {
+    margin-right: 10px;
+    /*font-size: 1.125em;*/ 
+  }
+
+  /*&__list-item--socials {
+    margin: 0 20px; width: 22%;
+  }*/
+
+  &__list-item--price {
+    display: none;
+  }
+  
+  &__list-title {  
+    padding: 0;      
+    border-radius: 0.37em; 
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+      
+                              
+    color: $menu-link_color; 
+    &:hover { 
+      transition: 0.4s ease;
+      color: $menu-link_hover;
+    }   
+  }
+  
+  &__list-title--active {
+    color: $menu-link-active_color;  
+    font-weight: 400;                    
+    cursor: default;
+    @media screen and (max-width: $mobile-big_end-point) {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '';
+        top: 0; 
+        left: 0;
+        bottom: 0; 
+        border-radius: 0.1em;
+        border: 0.1em solid $menu-link-active_color;
+        background: $menu-link-active_color;  
+      }
+    } 
+    &:hover { 
+      color: $menu-link-active_color;
+    } 
+  }
+
+  &--style_background {
+    /*&:hover {
+      transition: 0.7s ease;
+      background: rgba(0, 0, 0, 0.2); 
+    }*/
+  }
+
+  
+}
+ 
+@media screen and (max-width: $mobile-big_end-point) {
+  .menu-mobile {                
+    position: fixed; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    @include menu-location; /* align-items */  
+    
+    top: $header_mobile-height; /* 0; or $header_mobile-height */
+    @include menu-location; /* right or left */
+    bottom: 0;
+    
+    z-index: 50;
+    width: $mob-menu_width; 
+    padding-top: 50px;
+    box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    @media screen and (max-width: 345px) {
+      width: 100%; /* if width: 320px */
+    }
+    height: 100%;
+    overflow: auto;    
+    background: $mob-menu_bg;
+
+    .menu__list {      
+      width: $mob-menu-list_width;
+    }
+    .menu__list {      
+      @media screen and (max-width: 430px) {
+        width: $mob-menu-list_width-media; 
+      }
+    }
+    .menu__list-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 55px;
+      margin: 5px 0; 
+      background: $mob-menu-item_bg;
+    }
+
+    .menu__list-item--socials {
+      margin: 0; 
+      width: 100%;
+    }
+    .menu__list-title {    
+      font-size: 1rem;
+      text-transform: uppercase;         
+      margin-left: 25px; 
+      padding: 3px;
+      color: $mob-menu-link_color;
+      @media screen and (max-width: 650px) {
+        padding-right: 0; 
+      }
+    }
+    .menu__list-title--active {  
+      padding-left: 7px;
+      color: $menu-link-active_color;
+    }
+
+    &:hover {
+      transition: 0.3s ease;
+      /*background: rgba(256, 256, 256, 0.9);*/ 
+    }   
+  }
+  
+}
+
+/* animation for mobile, layer */
+@media screen and (max-width: $mobile-big_end-point) {
+  .menu-visible {
+    animation: menu-visible forwards;
+    /*animation-duration: 1900ms;*/   
+  }
+  @keyframes menu-visible {
+    /*0% {opacity: 0;}
+    100% {opacity: 1;}*/
+    0% {opacity: 0.7;}
+    100% {opacity: 1;}
+    0% {@include anim-x;}
+    100% {transform: translateY(0);}
+  }
+
+  .menu-hidden {
+    animation: menu-hidden forwards;   
+    /*animation-duration: 1900ms;*/ 
+  }
+  @keyframes menu-hidden {
+    /*0% {opacity: 1;}
+    100% {opacity: 0;}*/
+    0% {opacity: 1;}
+    100% {opacity: 0.7;}
+    100% {@include anim-x;}
+    0% {transform: translateY(0);}
+  }  
+  
+}
+
+/* mobile layer */
+.mobile-layer { 
+  display: none;
+  position: fixed; 
+  
+  bottom: -100vh; 
+  @include mobile-layer; 
+  left: 0;
+  right: 0;
+  z-index: 45;
+  background: rgba(0, 0, 0, 0.5); 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*animation-duration: 1900ms;*/ 
+}
+
+.mob-layer-on {
+  display: block;
+  cursor: pointer;
+  animation: mob-lr-on forwards;
+}
+@keyframes mob-lr-on {
+  0% {opacity: 0;}
+  100% {opacity: 1;}   
+}
+
+.mob-layer-off {
+  display: block;
+  cursor: pointer;
+  animation: mob-lr-off forwards;
+}
+@keyframes mob-lr-off {
+  0% {opacity: 1;}
+  100% {opacity: 0;}   
+}
+

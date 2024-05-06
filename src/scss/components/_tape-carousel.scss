@@ -1,0 +1,371 @@
+.t-carousel {
+  position: relative; 
+  /*width: 398px;*/
+  max-width: 100%;
+  padding: 0;
+                      
+  
+}
+
+.container-carousel {
+  max-width: $container_width; /* 1784px по макету, учитываем padding */       
+  margin: 0 auto;   
+  padding: 0 15px;  
+}
+@media screen and (max-width: 370px) {
+  .container-carousel {
+    padding: 0;
+  }
+}
+
+
+$text_height: 250px;
+$preview_height: 233px; /* 130px; 235px; */
+$preview_width: 370px; /* TODO - 352px; 250px;  /* 423px; */
+:root {
+  --preview-width: #{$preview_width};
+  --preview-height: #{$preview_height};
+}
+
+.t-carousel__subtitle { color: #fff; font-weight: 700; text-align: center; 
+  word-wrap: wrap;  /*word-break: break-all;*/
+  background: transparent; position: absolute; bottom: -$text_height; z-index: 10;  height: $text_height; text-align: center; padding: 10px 0;
+width: 100%; font-size: 1.5rem;
+}
+
+.t-carousel__text {
+  display: block; 
+   
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;  padding: 7px;
+}
+
+@media screen and (max-width: 1100px) { 
+  .t-carousel__subtitle {         
+    font-size: 1rem;      
+  } 
+  .t-carousel__text {         
+    font-size: 0.875rem; 
+    font-weight: 400;     
+  }
+}
+
+
+
+.t-carousel__preview-img {  position: relative; 
+  /*--preview-width: 352px; /* значение по умолчанию */
+  width: var(--preview-width);
+  height: 100%;
+  /*margin-right: 1px;*/
+  object-fit: cover;
+  /* make it block to remove space around images */
+  display: block;
+}
+
+@media screen and (max-width: $mobile-big_end-point) {
+  .t-carousel__preview-img {
+    --preview-width: 280px; /* новое значение при ширине экрана <= 460px */
+  }
+}
+
+.t-carousel__preview-img:hover { 
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.t-carousel__preview-link {
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  min-width: 170px;
+  padding: 7px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  background: #d51d1d;
+  color: #fff;
+}
+
+.t-carousel__preview-link:hover {
+  background: rgba(0, 0, 0, 0.7); 
+  transition: 0.4s;     
+}
+
+@media screen and (max-width: $mobile-big_end-point) { 
+  .t-carousel__preview-link {       
+    font-size: 1.2rem;      
+  } 
+}
+
+
+.t-arrow {
+  position: absolute;
+  top: 100px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.7); 
+  border: none;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
+  z-index: 10;
+}
+
+@media screen and (max-width: $mobile-big_end-point) {
+  .t-arrow {
+    top: 75px; /* новое значение при ширине экрана <= 460px */
+  }
+}
+
+.t-arrow:focus {
+  outline: none;
+}
+
+.t-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.t-prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;  
+}
+
+.t-next {
+  right: 0;  
+  border-radius: 3px 0 0 3px;
+}
+
+.t-carousel__gallery {
+  /*width: 390px;*/  
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.t-carousel__list {
+  min-height: calc($text_height + $preview_height); 
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 2000ms;
+  /* remove white-space between inline-block'ed li */
+  /* http://davidwalsh.name/remove-whitespace-inline-block */
+  font-size: 0;
+
+  /*display: flex;
+  justify-content: center;*/
+
+}
+
+@media screen and (max-width: 1100px) {
+  .t-carousel__list {
+    min-height: calc(145px + $preview_height);
+  }
+}
+
+.t-carousel__list-item { 
+  display: inline-block;
+  height: var(--preview-height); margin-right: 50px; /* margin-right: 5px; */
+    
+}
+
+@media screen and (max-width: $mobile-big_end-point) {
+  .t-carousel__list-item {
+    margin-right: 5px;
+    --preview-height: 185px; /* новое значение при ширине экрана <= 460px */
+  }
+}
+
+
+.container--carousel {
+
+}
+
+/*** layer, t-modal-img ***/
+.t-modal-img__image-box {
+  display: none;		    
+  position: relative;
+  top: 0;
+  right: 0;		  
+  left: 0;
+  bottom: 0px; 	
+  max-width: calc(100% - 10px);      
+  margin: auto;       
+  z-index: 2;   
+  
+  opacity: 0;
+  animation: ani 0.5s forwards;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+}
+
+@keyframes ani {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@media screen and (orientation: landscape) {   
+  .t-modal-img__image-box {  
+    max-width: calc(78%); 
+    margin: auto;  
+  }
+}
+
+.t-modal-img__image {    
+  display: block;
+  max-width: 100%; 
+  max-height: calc(100vh - 10px);  
+  margin: auto;
+  /*border: 1px solid rgba(0, 0, 0, 0.4);*/
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);   
+	
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);	 	 	 	
+}
+
+@media screen and (min-width: 955px) {
+  .t-modal-img__image-box  {  
+    max-width: 720px;            
+  }
+}	
+
+.t-modal-img__layer {
+  display: none;
+  align-items: center;
+  position: fixed; 
+  top: 0;
+  left: 0;   
+  right: 0;
+  bottom: 0;		    
+  /*background: rgba(256, 256, 256, 0.8);*/
+  background: rgba(0, 0, 0, 0.7);   
+  z-index: 200;	      
+  overflow-x: hidden;
+  cursor: pointer;
+  	
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   
+}
+
+.layer-on {
+  display: flex;
+  cursor: pointer;
+  animation: lr-on forwards;
+}
+@keyframes lr-on {
+  0% {opacity: 0;}
+  100% {opacity: 1;}   
+}
+
+.layer-off {
+  display: flex;
+  cursor: pointer;
+  animation: lr-off forwards;
+}
+@keyframes lr-off {
+  0% {opacity: 1;}
+  100% {opacity: 0;}   
+}
+
+.t-modal-img__icon-loading {
+  position: absolute;
+  top: 0; 
+  left: 0;  
+  right: 0;
+  bottom: 0; 
+  width: 60px;
+  margin: auto;
+  padding: 5px; 
+  border-radius: 5px;
+  background: #ffffff; 
+}
+
+/*** close icon ***/
+.icon-close-img {
+  display: inline-block;
+  position: absolute;	
+  top: calc(-50px );
+  right: calc(0px);	
+  font-size: 37px;	
+  color: #ececec;
+  z-index: 3;
+  transition: 0.2s;      
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+}
+	  
+.icon-close-img:hover,
+.icon-close-img:focus {         
+  text-decoration: none;
+  cursor: pointer;
+  color: silver; 	  
+}
+
+	  
+@media screen and (orientation: landscape) {
+  /* TODO - for inscription Close */
+  /*
+  .icon-close-img::before {
+  
+    content: "Close";
+    position: absolute; 
+    font-size: 1rem;
+    font-weight: bold;
+    top: calc(-5px);
+    right: calc(37px);
+     
+  }*/
+ 
+  /* TODO - for the "cross in a square" icon (or class="fas fa-window-close") */
+  /*
+  .icon-close-img::before {
+  
+    content: "\f410";
+    position: absolute; 
+    font-size: 37px;
+    /*font-weight: bold; /* add for fat
+    top: calc(-20px);
+    right: calc(37px);
+     
+  }
+  */
+  
+  /* TODO - for the "cross" icon */
+  /*
+  .icon-close-img::before {
+  
+    content: "\f00d";
+    position: absolute; 
+    font-size: 37px;
+    font-weight: bold; /* does not work without bold 
+    top: calc(-10px);
+    right: calc(-37px);
+     
+  }
+  */
+  
+  /* TODO - for &times; between tags */
+  /*
+  .icon-close-img {
+    
+    position: absolute; 
+    font-size: 37px;    
+    top: calc(-10px);
+    right: calc(-40px);
+     
+  }
+  */
+    
+  .icon-close-img {   
+    content: "\f057";
+    position: absolute;
+    top: calc(0px);
+    right: calc(-50px);
+    font-size: 37px;
+    /*font-weight: bold;*/    
+     
+  }
+
+}	
+
+
+

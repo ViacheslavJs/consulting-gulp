@@ -1,0 +1,346 @@
+/* https://swiperjs.com/demos - Slides per view */
+.swiper {
+  width: 100%;
+  height: auto; 
+}
+
+.swiper-slide {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  background: ''; 
+  color: #fff; 
+}
+
+.swiper-slide img {  
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+/**/
+
+/* custom */
+.container-swiperLatest {
+  max-width: 1350px;     
+  margin: 0 auto;   
+  padding: 0 15px;  
+}
+
+@media screen and (max-width: 370px) {
+  .container-swiperLatest {
+    padding: 0;
+  }
+}
+
+
+$slide-text_display: block; /* none */
+.latest-slide {
+  background: #eeeeee; 
+  
+  &__img:hover { 
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  &__preview-link {
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    display: block;
+    margin-top: 10px;
+    padding: 7px;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: center;
+    background: transparent;
+    border: 2px solid $elements-style_color;
+    color: #535353;    
+  }
+
+  &__preview-link:hover {
+    background: rgba(0, 0, 0, 0.7); 
+    transition: 0.4s; 
+    color: #fff;    
+    border: 2px solid transparent;
+  }
+
+  @media screen and (min-width: 1100px) { 
+    &__preview-link {  
+      font-size: 1.2em;
+    } 
+  }
+
+  &__text {
+    display: $slide-text_display;
+    font-size: 16px;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 7px;   
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: wrap;  /*word-break: break-all;*/
+    color: #535353;
+  }
+
+  &__description {
+    display: none;
+    margin-top: 7px;   
+    padding: 7px;
+    font-size: 1em;
+    font-weight: 400; /* 500 */
+    word-wrap: wrap;  /*word-break: break-all;*/
+    text-align: center;
+    color: #535353;
+  }
+}
+
+.latest-slide {
+  @media screen and (min-width: 320px) {
+    &__subtitle {    
+      min-height: calc(1em * 7);  
+    } 
+    &__description {    
+      min-height: calc(1em * 12);
+    } 
+  }
+
+  @media screen and (min-width: 480px) {
+    &__subtitle {    
+      min-height: calc(1em * 7); 
+    } 
+    &__description {    
+      min-height: calc(1em * 12);
+    } 
+  }
+
+  @media screen and (min-width: 640px) {
+    &__subtitle {    
+      min-height: calc(1em * 5); 
+    } 
+    &__description {
+      display: block;    
+      min-height: calc(1em * 10);
+    } 
+  }
+
+  @media screen and (min-width: 867px) {
+    &__subtitle {    
+      min-height: calc(1em * 5);  
+    } 
+    &__description {    
+      min-height: calc(1em * 10);
+    }
+  }
+
+  @media screen and (min-width: 1100px) { 
+    &__subtitle {  
+      font-size: 1.2em;  
+      min-height: calc(1em * 5); 
+    } 
+    &__text {    
+      min-height: calc(1em * 8.5);
+    }
+  }
+}
+
+/*** layer, latest-modal ***/
+.latest-modal {
+
+  &__image-box {
+    display: none;		    
+    position: relative;
+    top: 0;
+    right: 0;		  
+    left: 0;
+    bottom: 0px; 	
+    max-width: calc(100% - 10px);      
+    margin: auto;       
+    z-index: 2;   
+  
+    opacity: 0;
+    animation: latest-anim 0.5s forwards;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    @media screen and (orientation: landscape) {      
+      max-width: calc(78%); 
+      margin: auto;    
+    }
+    @media screen and (min-width: 955px) {    
+      max-width: 720px;               
+    }	
+  }
+
+  &__image {    
+    display: block;
+    max-width: 100%; 
+    max-height: calc(100vh - 10px);  
+    margin: auto;
+    /*border: 1px solid rgba(0, 0, 0, 0.4);*/
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);   	
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);	 	 	 	
+  }
+
+  &__layer {
+    display: none;
+    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;   
+    right: 0;
+    bottom: 0;		    
+    /*background: rgba(256, 256, 256, 0.8);*/
+    background: rgba(0, 0, 0, 0.7);   
+    z-index: 200;	      
+    overflow-x: hidden;
+    cursor: pointer;  	
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   
+  }
+
+  &__icon-loading {
+    position: absolute;
+    top: 0; 
+    left: 0;  
+    right: 0;
+    bottom: 0; 
+    width: 60px;
+    margin: auto;
+    padding: 5px; 
+    border-radius: 5px;
+    background: #ffffff; 
+  }
+  
+  /*** close icon ***/
+  &__close {
+    display: inline-block;
+    position: absolute;	
+    top: calc(-50px );
+    right: calc(0px);	
+    font-size: 37px;	
+    color: #ececec;
+    z-index: 3;
+    transition: 0.2s;        
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+    @media screen and (orientation: landscape) {    
+      content: "\f057";
+      position: absolute;
+      top: calc(0px);
+      right: calc(-50px);
+      font-size: 37px;
+      /*font-weight: bold;*/    
+    }
+  }
+	  
+  &__close:hover,
+  &__close:focus {         
+    text-decoration: none;
+    cursor: pointer;
+    color: silver; 	  
+  }
+
+}
+
+@keyframes latest-anim {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.latest-view {
+  display: flex;
+  cursor: pointer;
+  animation: latest-layerView forwards;
+}
+@keyframes latest-layerView {
+  0% {opacity: 0;}
+  100% {opacity: 1;}   
+}
+
+.latest-hidden {
+  display: flex;
+  cursor: pointer;
+  animation: latest-layerHidden forwards;
+}
+@keyframes latest-layerHidden {
+  0% {opacity: 1;}
+  100% {opacity: 0;}   
+}
+
+.latest-filters {
+  /*filter: blur(2px);*/
+  /*filter: grayscale(100%); /* changes color to black and white */	
+}
+	  
+@media screen and (orientation: landscape) {
+  /* TODO - for inscription Close */
+  /*
+  .latest-modal__close::before {
+  
+    content: "Close";
+    position: absolute; 
+    font-size: 1rem;
+    font-weight: bold;
+    top: calc(-5px);
+    right: calc(37px);
+     
+  }*/
+ 
+  /* TODO - for the "cross in a square" icon (or class="fas fa-window-close") */
+  /*
+  .latest-modal__close::before {
+  
+    content: "\f410";
+    position: absolute; 
+    font-size: 37px;
+    /*font-weight: bold; /* add for fat
+    top: calc(-20px);
+    right: calc(37px);
+     
+  }
+  */
+  
+  /* TODO - for the "cross" icon */
+  /*
+  .latest-modal__close::before {
+  
+    content: "\f00d";
+    position: absolute; 
+    font-size: 37px;
+    font-weight: bold; /* does not work without bold 
+    top: calc(-10px);
+    right: calc(-37px);
+     
+  }
+  */
+  
+  /* TODO - for &times; between tags */
+  /*
+  .latest-modal__close {
+    
+    position: absolute; 
+    font-size: 37px;    
+    top: calc(-10px);
+    right: calc(-40px);
+     
+  }
+  */
+  /*
+  .latest-modal__close {   
+    content: "\f057";
+    position: absolute;
+    top: calc(0px);
+    right: calc(-50px);
+    font-size: 37px;
+    /*font-weight: bold;   
+     
+  }
+  */
+
+}	
+
+
+
+

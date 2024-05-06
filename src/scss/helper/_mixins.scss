@@ -1,0 +1,157 @@
+/*TODO меню */
+
+/* меню справа */
+
+@mixin menu-location() {
+  right: 0; 
+  align-items: flex-end; /* flex-start; center; flex-end; */
+}
+
+@mixin anim-x($direct:  translateX(100%)) {
+  transform: $direct;
+}
+
+@mixin icon-location() {
+  justify-content: space-between; 
+}
+
+@mixin logo-location() {
+  justify-content: flex-start;  
+}
+
+@mixin lang-location() {
+  left: 15px; 
+}
+
+
+/* меню слева */
+/*
+@mixin menu-location() {
+  left: 0; 
+  align-items: flex-start;
+}
+
+@mixin anim-x($direct:  translateX(-100%)) {
+  transform: $direct;
+}
+
+@mixin icon-location() {
+  flex-direction: row-reverse;
+  justify-content: space-between;  
+}
+
+@mixin logo-location() {
+  @media screen and (max-width: $mobile-big_end-point) {
+    justify-content: flex-end; 
+    margin-right: 50%;  
+  } 
+}
+ 
+@mixin lang-location() {
+  right: 15px; 
+}
+*/
+
+/*TODO шапка */
+/* fixed all*/
+
+$header_height: 82px;
+$header_mobile-height: 45px;
+@mixin header() {
+  position: fixed;
+  height: $header_height;
+  @media screen and (max-width: $mobile-big_end-point) {
+    height: $header_mobile-height;
+  } 
+}
+
+@mixin header-inner() {
+  height: $header_height;
+  @media screen and (max-width: $mobile-big_end-point) {
+    height: $header_mobile-height;
+  }
+}
+
+@mixin menu() {
+  height: $header_height;
+}
+
+@mixin mobile-layer {
+  top: $header_height;
+  @media screen and (max-width: $mobile-big_end-point) {
+    top: $header_mobile-height;
+  }
+}
+
+@mixin main() {
+  margin-top: $header_height; 
+  @media screen and (max-width: $mobile-big_end-point) {
+    margin-top: $header_mobile-height;
+  }
+}
+
+
+/* don`t fixed all*/
+/*
+$header_height: auto;
+@mixin header() {
+  height: $header_height; 
+}
+
+@mixin header-inner() {
+  height: $header_height;
+}
+
+@mixin menu() {
+  height: $header_height;
+}
+
+@mixin mobile-layer {
+  top: 0;
+}
+
+@mixin main() {
+  margin-top: 0; 
+}
+*/
+
+/* fixed mobile only */
+/*
+$header_height: auto;
+$header_mobile-height: 45px;
+@mixin header() {
+  height: auto;
+  @media screen and (max-width: $mobile-big_end-point) {
+    position: fixed;
+    height: $header_mobile-height;
+  } 
+}
+
+@mixin header-inner() {
+  height: $header_height;
+  @media screen and (max-width: $mobile-big_end-point) {
+    height: $header_mobile-height;
+  }
+}
+
+@mixin menu() {
+  height: $header_height;
+}
+
+@mixin mobile-layer {
+  top: 0; /* если $header_height: задан в px, то top: $header_height  
+  @media screen and (max-width: $mobile-big_end-point) {
+    top: $header_mobile-height;
+  }
+}
+
+@mixin main() {
+  margin-top: 0; 
+  @media screen and (max-width: $mobile-big_end-point) {
+    margin-top: $header_mobile-height;
+  }
+}
+*/
+
+ 
+

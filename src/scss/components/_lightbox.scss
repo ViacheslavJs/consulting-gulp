@@ -1,0 +1,229 @@
+/*** layer, lightbox ***/
+
+
+.test {
+  background: blue; 
+  word-wrap: wrap; 
+  word-break: break-all;
+}
+
+.test__title {
+  color: orange;
+}
+
+.test__text {
+  color: #fff;
+}
+
+.testing {
+  background: red;
+  border: 1px solid #fff;
+}
+
+.testing__title {
+  color: #000;
+}
+
+
+.lightbox {
+  
+  &__layer {
+    display: none;
+    align-items: center;
+    position: fixed; 
+    top: 0;
+    left: 0;   
+    right: 0;
+    bottom: 0;		    
+    /*background: rgba(256, 256, 256, 0.7);*/
+    background: rgba(0, 0, 0, 0.7);   
+    z-index: 200;	      
+    overflow-x: hidden;
+    cursor: pointer; 	
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   
+  }
+  
+  &__modal {
+    display: none;		    
+    position: relative;
+    top: 0;
+    right: 0;		  
+    left: 0;
+    bottom: 0; 	
+    max-width: calc(100% - 10px);      
+    margin: auto;       
+    z-index: 2;   
+  
+    opacity: 0;
+    animation: lightbox-anim 0.5s forwards;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    @media screen and (orientation: landscape) {     
+      max-width: calc(78%); 
+      margin: auto;  
+    }
+    @media screen and (min-width: 955px) {  
+      max-width: 720px;            
+    } 
+    &--style_background {
+      background: blue; 
+    }
+    &--style_color {
+      border: 3px solid lime;
+    }
+    &--form {
+      padding: 25px 10px;
+    }
+
+  }
+
+  &__image {    
+    display: block;
+    max-width: 100%; 
+    max-height: calc(100vh - 10px);  
+    margin: auto;
+    /*border: 1px solid rgba(0, 0, 0, 0.4);*/
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);   	
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);	 	 	 	
+  }
+
+  /*** close icon ***/
+  &__close {
+    display: inline-block;
+    position: absolute;	
+    top: calc(-50px);
+    right: calc(0px);	
+    font-size: 37px;	
+    color: gray;
+    z-index: 3;
+    transition: 0.2s;        
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+    @media screen and (orientation: landscape) {    
+      content: "\f057";
+      position: absolute;
+      top: calc(0px);
+      right: calc(-50px);
+      font-size: 37px;
+      /*font-weight: bold;*/    
+    }
+    
+    &--style_color {
+      color: red;
+    }
+    
+    &--style_bg {
+      background: #fff;
+    }
+
+    &--form {
+      top: calc(30px);
+      right: calc(15px);	
+    }
+
+  }
+	  
+  &__close:hover,
+  &__close:focus {         
+    text-decoration: none;
+    cursor: pointer;
+    color: silver; 	  
+  }
+}
+
+@keyframes lightbox-anim {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.lightbox-view {
+  display: flex;
+  cursor: pointer;
+  animation: lightbox-layerView forwards;
+}
+@keyframes lightbox-layerView {
+  0% {opacity: 0;}
+  100% {opacity: 1;}   
+}
+
+.lightbox-hidden {
+  display: flex;
+  cursor: pointer;
+  animation: lightbox-layerHidden forwards;
+}
+@keyframes lightbox-layerHidden {
+  0% {opacity: 1;}
+  100% {opacity: 0;}   
+}
+
+.lightbox-filters {
+  /*filter: blur(2px);*/
+  /*filter: grayscale(100%); /* changes color to black and white */	
+}
+
+	  
+@media screen and (orientation: landscape) {
+  /* TODO - for inscription Close */
+  /*
+  &__close::before {
+  
+    content: "Close";
+    position: absolute; 
+    font-size: 1rem;
+    font-weight: bold;
+    top: calc(-5px);
+    right: calc(37px);
+     
+  }*/
+ 
+  /* TODO - for the "cross in a square" icon (or class="fas fa-window-close") */
+  /*
+  &__close::before {
+  
+    content: "\f410";
+    position: absolute; 
+    font-size: 37px;
+    /*font-weight: bold; /* add for fat
+    top: calc(-20px);
+    right: calc(37px);
+     
+  }
+  */
+  
+  /* TODO - for the "cross" icon */
+  /*
+  &__close::before {
+  
+    content: "\f00d";
+    position: absolute; 
+    font-size: 37px;
+    font-weight: bold; /* does not work without bold 
+    top: calc(-10px);
+    right: calc(-37px);
+     
+  }
+  */
+  
+  /* TODO - for &times; between tags */
+  /*
+  &__close {
+    
+    position: absolute; 
+    font-size: 37px;    
+    top: calc(-10px);
+    right: calc(-40px);
+     
+  }
+  */
+  /*  
+  &__close {   
+    content: "\f057";
+    position: absolute;
+    top: calc(0px);
+    right: calc(-50px);
+    font-size: 37px;
+    /*font-weight: bold;         
+  }
+  */
+
+}	
+
+

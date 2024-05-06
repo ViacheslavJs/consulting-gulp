@@ -1,0 +1,43 @@
+<!--<footer class="footer" style="background-image: url(img/chicken-bg.jpg);">-->
+<footer class="footer">
+
+  @@include('../components/messengers.html', {}) 
+  @@include('../components/chat.html', {}) 
+  @@include('../components/support.html', {}) 
+
+  <div class="container">    
+    <div class="footer__inner">
+       
+      <div id="footerSocial" class="footer-social">                                     
+        <a class="footer-social__link" href="">
+          <span class="footer-social__icon fab fa-whatsapp"></span>            
+        </a>          
+        <a class="footer-social__link" href="">          
+          <span class="footer-social__icon fab fa-facebook-f"></span> 
+        </a>                  
+        <a class="footer-social__link" href="">
+          <span class="footer-social__icon fas fa-at"></span>
+        </a>        
+      </div> 
+      
+      <div id="footerLogo" class="footer__logo">
+        <a class="footer__logo-link" href="index.html">
+          <img class="footer__logo-image" src="logo/logo.png" alt="logo">
+        </a>           
+      </div>
+
+      <div id="copyright">                  
+        <p class="company">Copyright &#169;<script>document.write(new Date().getFullYear());</script>
+           All rights reserved                    
+        </p>
+        <div class="policy">
+          <a class="policy__privacy" href="">Privacy Policy</a>
+            &#124;
+          <a class="policy__terms" href="">Terms of Use</a>
+        </div>
+      </div>
+                                
+    </div><!-- footer__inner --> 
+      
+  </div><!-- container -->      
+</footer>

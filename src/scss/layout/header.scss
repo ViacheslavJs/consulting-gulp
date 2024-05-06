@@ -1,0 +1,53 @@
+.header {
+  @include header;     
+  top: 0;
+  left: 0; 
+  right: 0;   
+   
+  z-index: 50;
+  background: $header_bg; 
+  /*border-bottom: 1px solid silver;*/
+  
+  animation: scroll-anim_1 0.5s forwards;
+  
+  @media screen and (max-width: $mobile-big_end-point) {
+    animation: scroll-anim_1 0.5s forwards;
+  }  
+  
+  &--scroll {
+    display: none; 
+  }
+  
+}
+
+.header__inner { 
+  @include header-inner; 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between;           
+  align-items: center; 
+  position: relative;   
+  /*border-bottom: 1px solid silver; /*TODO линия снизу*/
+  @media screen and (max-width: $mobile-big_end-point) {     
+    @include icon-location;             
+  }
+}
+
+.header__line {
+  display: none;
+  height: 10px;
+  margin-top: 0px;
+  border: none;
+  background: $header-line_bg;
+}
+
+@keyframes scroll-anim_1 {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+       
+@keyframes scroll-anim_2 {
+  0% {transform: translateY(-50%);}
+  100% {transform: translateX(0);}
+}
+  

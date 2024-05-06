@@ -1,0 +1,87 @@
+ /* Popup container */
+
+.chat-btn {  
+  position: fixed; 
+  z-index: 40;
+  bottom: 12px;
+  right: 12px;   
+  font-size: 16px;    
+ 
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  width: 50px; 
+  height: 50px;
+  padding: 8px; 
+  border-radius: 100%; 
+  background: #eb4326;
+  cursor: pointer;
+  transition: 0.8s;
+  animation: chat-anim 0.4s forwards; 
+   
+  &--scroll {
+    display: none; 
+  }
+}
+
+.fas.fa-headset {
+  font-size: 1.6em;
+  color: #fff;
+}
+
+@keyframes chat-anim {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.chat-window {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.chat-window::after {
+  content: "";
+  position: absolute;
+}
+
+.chat-window {    
+  width: 340px;
+  height: 450px;
+  bottom: 125%;
+  right: 0;
+  /*margin-left: -80px;*/
+  padding: 8px 0;
+  background-color: #fff;
+  color: #555;
+  text-align: center;
+  border-radius: 6px; 
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));   
+  @media screen and (max-width: 370px) {
+    width: 295px;
+  } 
+  @media screen and (orientation: landscape) {
+    bottom: 0;   
+    right: 62px;
+    height: calc(95vh - $header_height);
+  }
+              
+}
+
+.chat-active {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.2s;
+  animation: fadeIn 0.2s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 

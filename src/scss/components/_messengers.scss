@@ -1,0 +1,170 @@
+$messendgers_bg: rgba(0, 0, 0, 0.7); /* values - rgba(0, 0, 0, 0.6); rgba(256, 256, 256, 0.8); */
+$color-base: #ffffff;
+$icon-social_hover: #3c4e94;
+
+$messengers-btn_position: fixed; /* absolute/fixed - if 'absolute' top: -75px; if 'fixed' - bottom: 100px;*/
+
+$phone_color: $color-base;     /* #2dd736; or $color-base; */
+$messenger_color: $color-base; /* #1287f7; or $color-base; */
+$telegram_color: $color-base;  /* #48a9e1; or $color-base; */
+$viber_color: $color-base;     /* #7c59ea; or $color-base; */
+
+.messengers-btn {  
+  position: $messengers-btn_position; 
+  z-index: 40;
+  display: flex;  
+  /*top: -75px;*/
+  bottom: 12px;
+  right: 12px;   
+  font-size: 16px;   
+  
+  animation: scroll-anim_1 0.4s forwards; 
+  
+  &--scroll {
+    display: none; 
+  }
+    
+}
+
+.messengers-btn__link {   
+  display: none;                
+  position: absolute;
+  width: 50px; 
+  height: 50px;    
+  border-radius: 100%;
+  z-index: 40; 
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+  
+  &.fourth.direction-x {
+    right: 255px;
+    color: $phone_color;
+  }
+  
+  &.third.direction-x {
+    right: 190px;
+    color: $messenger_color;
+  }
+  
+  &.second.direction-x {
+    right: 125px;
+    color: $telegram_color;
+  }
+  
+  &.first.direction-x {
+    right: 60px;
+    color: $viber_color;
+  }
+ 
+  &.fourth.direction-y {
+    bottom: 265px;
+    color: $phone_color;
+  }
+  
+  &.third.direction-y {
+    bottom: 200px;
+    color: $messenger_color;
+  } 
+  
+  &.second.direction-y {
+    bottom: 135px;
+    color: $telegram_color;
+  }
+  
+  &.first.direction-y {
+    bottom: 70px;
+    color: $viber_color;
+  }
+                    
+}
+
+.messengers-btn__icon {
+  margin: 0;
+  padding: 5px; 
+  font-size: 1.9em;     
+  &:hover {
+    color: $icon-social_hover;
+    transition: 0.2s; 
+  }
+}
+
+.icons-show { 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center; 
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;  
+  background: $messendgers_bg;
+  opacity: 0;
+  animation: direction-right 0.4s forwards; 
+    
+  @keyframes direction-right {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    0% {transform: translateX(150%);}
+    100% {transform: translateY(0);}
+  }
+  @keyframes direction-up {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    0% {transform: translateY(150%);}
+    100% {transform: translateX(0);}
+  }
+  
+}
+
+.messengers-btn__base-icon {  
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  width: 50px; 
+  height: 50px;
+  padding: 8px; 
+  border-radius: 100%; 
+  background: #213584;
+  transition: 0.8s;
+    
+  font-size: 1.9em;
+  color: $color-base;    
+  z-index: 40;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+  &:hover {
+    opacity: 0.6;
+    color: $icon-social_hover;
+    transition: 0.4s; 
+    cursor: pointer;
+  }
+  &.base-icon-hidden {
+    color: silver;
+    cursor: pointer;
+    animation: my-animation 0.4s forwards;
+  }
+  
+  &.cursor-inactive {
+    /* TODO - this class is used when self-disappearing icons feature is enabled in js */
+    color: silver;
+    cursor: default;
+    animation: my-animation 0.4s forwards;
+  }
+  
+  @keyframes my-animation {
+    0% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
+  
+}
+
+@keyframes scroll-anim_1 {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+       
+@keyframes scroll-anim_2 {
+  0% {transform: translateY(-50%);}
+  100% {transform: translateX(0);}
+}
+  
+

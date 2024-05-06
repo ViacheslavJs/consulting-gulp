@@ -1,0 +1,97 @@
+ /* Popup container */
+
+.js-popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popup {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.popup::after {
+  content: "";
+  position: absolute;
+}
+
+.more { 
+/* The actual popup (appears on top) */
+  &__popup {    
+    width: 160px;
+    bottom: 125%;
+    left: 100%;
+    margin-left: -80px;
+    padding: 8px 0;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;            
+  }
+
+  /* Popup arrow */
+  &__popup::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s
+  }
+}
+
+
+
+.details {
+  color: red;
+/* The actual popup (appears on top) */
+  &__popup {    
+    width: 160px;
+    bottom: -40%;
+    left: 210%;
+    margin-left: -85px;
+    padding: 8px 0;
+    color: #404040;
+    text-align: center;
+    border-radius: 3px;               
+    background-color: #f1f1f1; 
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2); /* TODO - shadow */
+  }
+
+  /* Popup arrow */
+  &__popup::after {
+    top: 40%;
+    left: -4%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #f1f1f1 transparent transparent;
+  }
+
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s
+  }
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 

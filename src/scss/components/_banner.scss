@@ -1,0 +1,59 @@
+.banner {
+  position: fixed; /* or position: absolute;*/
+  background: white;
+  width: 280px;
+  min-height: 80px;
+  word-wrap: wrap;
+  word-break: break-all; 
+  z-index: 40;
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));
+  animation: banner-hidden 0s forwards;   
+}
+
+.content-control {
+  display: none;
+}
+
+.banner-btn {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -22px;
+  padding: 15px 5px;
+  font-size: 24px;
+  border-radius: 0 3px 3px 0;
+  background: #eb4326;
+  color: #fff;
+}
+
+
+
+.banner-visible {
+  animation: banner-visible 0.5s forwards;
+  /*animation-duration: 1900ms;*/   
+}
+
+@keyframes banner-visible {
+  /*0% {opacity: 0;}
+  100% {opacity: 1;}*/
+  0% {opacity: 0.7;}
+  100% {opacity: 1;}
+  0% {transform: translateX(-100%);}
+  100% {transform: translateY(0);}
+}
+
+.banner-hidden {
+  animation: banner-hidden 0.5s forwards;   
+  /*animation-duration: 1900ms;*/ 
+}
+
+@keyframes banner-hidden {
+  /*0% {opacity: 1;}
+  100% {opacity: 0;}*/
+  0% {opacity: 1;}
+  100% {opacity: 0.7;}
+  100% {transform: translateX(-100%);}
+  0% {transform: translateY(0);}
+}
+

@@ -1,0 +1,92 @@
+.header-socials__link {      
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between; 
+  align-items: center; 
+  width: 22%;
+  margin: 0 20px; 
+  padding: 0;
+  font-size: 16px;    
+  @media screen and (max-width: $mobile-big_end-point) {    
+    display: none;  
+  }  
+}
+
+.header-socials-mob__link {      
+  display: none;
+  @media screen and (max-width: $mobile-big_end-point) {    
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;  
+    align-items: center;
+    margin-right: 25px;  
+    padding: 0;
+    font-size: 16px;       
+  }  
+}
+
+.header-socials {      
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0;
+  font-size: 16px;     
+  @media screen and (max-width: $mobile-big_end-point) {    
+    display: none;  
+  } 
+}
+
+.header-socials-mob {      
+  display: none;
+  @media screen and (max-width: $mobile-big_end-point) {    
+    display: flex;
+    flex-direction: row;  
+    justify-content: flex-start;  
+    align-items: center;
+    margin-left: 25px;
+    padding: 0;
+    font-size: 16px;       
+  }  
+}
+
+.header-socials__link,
+.header-socials-mob__link {
+  cursor: pointer; 
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.header-socials__img {
+  width: 25px; /*margin: 10px;*/ 
+  filter: invert(95%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(91%) contrast(92%);
+  
+  @media screen and (min-width: 960px) {          
+      
+  }
+  @media screen and (min-width: 1240px) {          
+    width: 35px;
+  } 
+  /*margin-right: 50px;*/
+  
+  /*filter: invert(50%) sepia(100%) saturate(340%) hue-rotate(15deg);     
+  @media screen and (max-width: $mobile-big_end-point) {       
+    filter: invert(50%) sepia(100%) saturate(340%) hue-rotate(165deg);
+  }*/
+}
+
+
+.header-socials-mob__img { 
+  width: 35px;
+  filter: invert(95%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(91%) contrast(92%);
+  /*margin-right: 25px;*/
+  cursor: pointer; 
+  /*filter: invert(50%) sepia(100%) saturate(340%) hue-rotate(15deg);     
+  @media screen and (max-width: $mobile-big_end-point) {       
+    filter: invert(50%) sepia(100%) saturate(340%) hue-rotate(165deg);
+  }*/
+}
+
+
+

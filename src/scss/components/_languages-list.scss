@@ -1,0 +1,113 @@
+$color-base: #ffffff;
+$lang-border_color: #444444;
+$lang-icon_color: #444444;
+$border-bottom_color: #444444;
+$submenu_bg: #ffffff;
+$submenu-link_color: #444444;
+$submenu-link_color: #444444;
+$link-border_color: #444444;
+$base-lang_color: #444444;
+
+.languages {      
+  display: flex;
+  flex-direction: row;  
+  justify-content: flex-end; 
+  align-items: center; 
+  padding: 0 10px;
+  font-size: 16px;   
+  cursor: pointer;
+  border-left: 1px solid $lang-border_color;
+  @media screen and (max-width: $mobile-big_end-point) {    
+    position: absolute;       
+    top: 0;
+    @include lang-location;
+    padding: 0;
+    border: none;     
+  }
+  
+}
+
+.languages__list {
+  list-style: none;      
+  padding: 0;
+  margin: 0;
+  float: left;
+  position: relative;    
+}
+
+.languages__link {
+  height: 3.12em; 
+  display: block;
+  line-height: 3.12em;
+  padding: 0 5px;
+  text-decoration: none;
+  text-transform: uppercase; 
+  color: $base-lang_color; 	
+}
+
+.languages__link:hover {
+  /*background: #69c;*/
+}
+
+.languages__submenu { 
+  width: 100%;
+  position: absolute;  
+  left: 0;
+  top: 100%; 
+  z-index: 100;
+  background: $submenu_bg;
+  box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; 
+}
+
+.languages__item:hover .languages__submenu {
+  /*display: block; */
+}
+
+.languages__submenu-item {
+  display: block; 
+  margin: 14px 0 14px -40px; 
+  padding: 0.3em;    
+}
+
+.languages__link-sub {
+  background: #f60;
+  white-space: nowrap; 
+}
+
+.languages__link-sub:hover {
+  background: #d30;
+}
+
+.languages__submenu-link {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid $link-border_color; 
+  color: $submenu-link_color;    
+}
+
+.languages__item {
+  
+}
+
+.languages__select {
+    
+}
+
+.fas.fa-globe {
+  font-size: 1.125em;
+  color: $lang-icon_color;
+}
+
+.languages__icon {
+  font-size: 1.125em;
+  color: $lang-icon_color;
+}
+
+
+

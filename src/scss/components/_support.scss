@@ -1,0 +1,69 @@
+$sup-btn_left: -28px;
+$sup-btn_bottom: 0;
+
+.support {
+  position: fixed; 
+  right: 0; 
+  bottom: 12px;
+  background: white;
+  width: 340px;
+  height: 450px;
+  border-radius: 3px 0 0 0;
+  word-wrap: wrap;
+  word-break: break-all;
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2))); 
+  z-index: 40;
+  animation: support-hidden 0s forwards;
+
+  @media screen and (max-width: 380px) {
+    width: 290px;
+  }
+  @media screen and (orientation: landscape) {
+    
+    height: calc(95vh - $header_height);
+  }
+ 
+}
+
+.content-control {
+  display: none;
+}
+
+.support-btn {
+  position: absolute; 
+  left: $sup-btn_left;
+  bottom: $sup-btn_bottom;
+  
+  font-size: 24px;
+  border-radius: 3px 0 0 3px;
+  background: #eb4326;
+  color: #fff;
+  
+  &--scroll {
+    display: none;
+  }
+
+}
+
+
+
+.support-visible {
+  animation: support-visible 0.5s forwards;
+  /*animation-duration: 1900ms;*/   
+}
+
+@keyframes support-visible {
+  0% {transform: translateX(100%);}
+  100% {transform: translateY(0);}
+}
+
+.support-hidden {
+  animation: support-hidden 0.5s forwards;   
+  /*animation-duration: 1900ms;*/ 
+}
+
+@keyframes support-hidden {
+  100% {transform: translateX(100%);}
+  0% {transform: translateY(0);}
+}
+

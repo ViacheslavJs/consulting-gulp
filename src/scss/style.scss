@@ -1,0 +1,178 @@
+/* Операторы:
+  & - имитирует родителя
+  > - обращение к первому дочернему элементу */
+
+@import "base/_reset.scss";
+@import "base/_normalize.scss";
+@import "base/_brakepoints.scss";
+@import "base/_container.scss";
+
+@import "helper/_vars.scss";
+@import "helper/_mixins.scss";
+@import "helper/_display.scss";
+
+
+@import "components/_banner.scss";
+@import "components/_languages-list.scss";
+@import "components/_header-socials.scss";
+@import "components/_logo.scss";
+@import "components/_messengers.scss";
+@import "components/_tape-carousel.scss";
+@import "components/_swiper-latest.scss";
+@import "components/_swiper-news.scss";
+@import "components/_tile-lightbox.scss";
+@import "components/_lightbox.scss";
+@import "components/_popups.scss";
+@import "components/_accordion.scss";
+@import "components/_chat.scss";
+@import "components/_support.scss";
+@import "components/_cookies.scss";
+
+@import "layout/header.scss";
+@import "layout/footer.scss";
+@import "layout/menu.scss";
+
+@import "pages/index.scss";
+@import "pages/shop-dog.scss";
+@import "pages/shop-cat.scss";
+@import "pages/story.scss";
+@import "pages/contacts.scss";
+
+@import "section/contacts.scss";
+@import "section/mode.scss";
+@import "section/_map.scss";
+
+/* reset, normalize */
+
+/*
+:root {
+  font-size: 0.75em; 
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    font-size: 0.875em; 
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+    font-size: 1em; 
+  }
+}
+*/
+
+:root {
+  font-size: 1em; 
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%; 
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;  
+  padding: 0; 
+  /*font-size: 20px; /**/
+  /*font-family: 'Open Sans', Arial, Verdana, 'Times New Roman', 
+                 'Liberation Sans', 'DejaVu Sans', Calibri, Helvetica, sans-serif;*/
+  font-family: 'Montserrat', sans-serif; /**/
+  font-weight: 300;
+  line-height: 1.5; /* 150% */
+}
+
+.wrapper {
+  display: flex; 
+  flex-direction: column;
+  /*justify-content: flex-end;*/     
+  min-height: 100vh; 
+  margin: 0;             
+  padding: 0; 
+  overflow: hidden;  
+}
+
+.main {    
+  @include main;
+  flex-grow: 1; 
+}
+
+.container {  
+  max-width: $container_width; /* ...px по макету, учитываем padding */       
+  margin: 0 auto;   
+  padding: 0 15px;
+  @media screen and (max-width: 350px) {
+    padding: 0 7px;
+  } 
+}
+
+/*
+.container {   
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media screen and (max-width: 350px) {
+    padding: 0 7px;
+  } 
+}
+
+@media screen and (max-width: 1399px) {
+  .container {
+    max-width: 1140px;
+  } 
+}
+
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  } 
+}
+*/
+
+a { 
+  text-decoration: none;   
+  color: inherit; 
+  cursor: pointer;  
+}
+
+ul,
+li,
+ol,
+dd {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+

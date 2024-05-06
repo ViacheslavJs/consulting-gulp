@@ -1,0 +1,846 @@
+/* variables */
+$sections_margin: 0px 0px; 
+$sections_padding: 22px 0; /* 20px 0 */
+
+/* style page */
+.main--home {
+  /*font-family: sans-serif; /**/        
+}
+/* style page */
+
+section {
+  margin: $sections_margin;
+  padding: $sections_padding; 
+}
+
+section:nth-child(even) {
+  /*background-color: #f0f0f0;*/
+  /*background: #f5f5f5;*/
+}
+
+/***** TODO - module  *********************/
+.top__right {
+  width: 50%;   /*background: rgba(0, 0, 0, 0.7);*/  
+}
+
+.top__left {
+  width: 50%;   
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container-top {
+  max-width: calc($container_width / 2);
+  padding-right: 15px;    
+}
+
+@media screen and (max-width: 650px) {
+  .top__right {
+    display: none; 
+  }
+
+  .top__left {
+    width: 100%;
+  }
+
+  .container-top {
+    max-width: $container_width;
+    padding: 0 15px;  
+  }  
+
+}
+
+@media screen and (max-width: 350px) {
+  .container-top {
+    max-width: $container_width;
+    padding: 0 7px;  
+  }  
+}
+
+
+.btn-one {
+  padding: 5px;   
+  background: #535353;
+  border: 1px solid blue;
+  color: #eb4326;
+}
+.btn-two {
+  padding: 5px;   
+  background: gray;
+  border: 1px solid blue;
+  color: green;
+}
+.btn-three {
+  padding: 5px;   
+  background: #ff0;
+  border: 1px solid blue;
+  color: blue;
+}
+
+.top {
+  position: relative;   
+  display: flex;  
+  flex-direction: row;  
+  background-repeat: no-repeat; 
+  /*background-position: top bottom center;*/
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  height: 100%;/**/   
+  @media screen and (min-width: 960px) {          
+    min-height: 600px;/**/       
+  }   
+  
+  &__inner {         
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    text-align: center;
+    font-family: 'Open Sans', Arial, Verdana, 'Times New Roman', 
+                 'Liberation Sans', 'DejaVu Sans', Calibri, Helvetica, sans-serif;
+    /*font-family: Amatic SC, sans-serif; /**/
+    font-weight: 400;  
+    color: #4c4c4c;        
+    @media screen and (min-width: 960px) {          
+      min-height: 600px;/**/       
+    }       
+  } 
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*max-width: 58%;*/
+    margin-top: 75px;
+    margin-bottom: 50px; 
+    margin-left: auto;
+    margin-right: auto;  
+    padding: 0; 
+    @media screen and (min-width: 375px) {          
+      width: 60%; 
+    }        
+  }
+
+  &__order-tel {
+    font-size: 1.8rem;
+    font-weight: 700; 
+    color: #fff;
+    @media screen and (max-width: 1100px) {
+      font-size: 1.3rem;
+    }
+    /*@media screen and (min-width: 1240px) {          
+      font-size: 2.5rem;  
+    }*/
+  }
+
+  &__order-btn {    
+    margin-top: 25px; 
+    padding: 5px;   
+    font-size: 1.2rem; 
+    font-weight: 700;
+    border: 2px solid $elements-style_color;
+    text-transform: uppercase;
+    color: #fff;
+    @media screen and (max-width: 1100px) {
+      font-size: 0.9rem;
+    }
+    /*@media screen and (min-width: 1240px) {          
+      font-size: 1.5rem;  
+    }*/
+  }
+
+  &__right {
+    /*padding: 100px 0;*/     
+  }
+
+  &__info {                
+    width: 100%; 
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    @media screen and (min-width: 1230px) {  
+      padding-left: 150px;    
+      font-size: 3.5rem;  
+    }
+  }
+
+  &__title {                      
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 125px;*/
+    margin-top: 50px;
+    padding-left: 0;
+    font-size: 2.5rem;      
+    text-align: center;
+    line-height: 1.2;     
+    
+    font-weight: 400;   
+    color: #fff; 
+    @media screen and (max-width: $mobile-big_end-point) { 
+      padding: 0; 
+      font-size: 2.3rem;                 
+    }    
+    @media screen and (min-width: 960px) {          
+      font-size: 3rem;  
+    }
+    @media screen and (min-width: 1230px) {  
+      /*padding-left: 150px;*/      
+      font-size: 3.5rem;  
+    }
+    /*@media screen and (min-width: 1240px) {          
+      font-size: 4.5rem;  
+    }*/      
+  } 
+
+  &__title-span {
+    font-weight: 800;   
+    color: #fff;    
+  }
+
+  &__img-left {  
+    display: block; 
+    object-fit: cover;
+    width: 35%;
+    margin-bottom: -5%;
+    @media screen and (max-width: 464px) {     
+      width: 30%;
+      margin-bottom: -12%;
+      /*display: none;/**/        
+    }      
+  }
+     
+}
+
+/* s-06 */
+.news {
+  &__title {           
+    /*width: 30%;*/
+    margin-top: 0;
+    margin-bottom: 20px; 
+    margin-left: 0; 
+    padding-left: 10px;
+    border: none;  
+    text-align: left;
+    line-height: 1.2;
+    font-size: 2rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #535353;  
+    
+       
+      border-left: 4px solid $elements-style_color;             
+  
+  } 
+
+  &__title-span {
+    color: #00a1d2;
+    font-size: 3rem;
+    font-weight: 600;
+  } 
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__span {
+    display: block;
+    margin-bottom: 30px; 
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+    color: $elements-style_color;
+    @media screen and (max-width: 767px) {   
+      font-size: 1.2rem; 
+      text-align: left; 
+    } 
+  } 
+  
+}
+
+/* s-07 */
+.latest {
+  &__inner {
+    
+  }
+
+  &__title {           
+    /*width: 30%;*/    
+    margin-top: 0;
+    margin-bottom: 20px; 
+    margin-left: auto;
+    margin-right: auto; 
+    padding-left: 0;
+    border: none;  
+    text-align: center;
+    line-height: 1.2;
+    font-size: 2rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #535353;
+    @media screen and (max-width: 767px) {  
+      font-size: 1.7rem;  
+      text-align: left;
+    } 
+  } 
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__span {
+    display: block;
+    margin-bottom: 30px; 
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+    color: $elements-style_color;
+    @media screen and (max-width: 767px) {   
+      font-size: 1.2rem; 
+      text-align: left; 
+    } 
+  } 
+  
+}
+
+/***** TODO - module tile-preview *********************/
+/* стиль для квадратных(~ 200px) изображений */
+/*
+.tile-preview.for-effects {  
+  max-width: calc(100%);
+  margin: 50px auto;               
+  padding: 0px; 
+    
+}
+
+@media screen and (orientation: landscape) {
+
+.tile-preview__container {
+  display: flex;
+  flex-direction: row; 
+}
+
+.tile-preview__container-left,
+.tile-preview__container-right {
+  display: flex;
+  flex-direction: row; 
+}
+
+}
+
+@media screen and (orientation: portrait) {
+
+.tile-preview__container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+
+.tile-preview__container-left,
+.tile-preview__container-right {
+  display: flex;
+  flex-direction: row; 
+}
+
+}
+  
+.tile-preview__img-box {         
+  padding: 1px;
+  background: #f6f6f8;   
+}
+ 
+.tile-preview__img { 
+  display: block;       
+  width: 100%;    
+  cursor: pointer;               
+  transition: 0.2s;  
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.tile-preview__img:hover { 
+  opacity: 0.8;
+}
+*/
+/*****tile-preview*****/
+   
+
+/***** TODO - module tile-preview *********************/
+/* стиль для неизменённых(соотн. сторон как есть) изображений */
+.tile-preview {  
+  max-width: calc(100%);
+  margin: 50px auto;               
+  padding: 0px; 
+    
+  @media screen and (orientation: landscape) {
+    &__container {
+      display: flex;
+      flex-direction: row;     
+    }
+    &__container-left,
+    &__container-right {
+      display: flex;
+      flex-direction: row; 
+      width: 100%;
+    }
+  }
+
+  @media screen and (orientation: portrait) {
+    &__container {
+      display: flex;
+      flex-direction: column; 
+      justify-content: center;
+      align-items: center;
+    }
+    &__container-left,
+    &__container-right {
+      display: flex;
+      flex-direction: row; 
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    &__container-left,
+    &__container-right {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ 
+  &__img-box { 
+    width: 100%;  
+    margin: 0 auto;           
+    padding: 1px;
+    background: #f6f6f8;    
+  }
+ 
+  &__img { 
+    display: block;       
+    max-width: 100%; 
+    height: 200px;
+    margin: 0 auto;          
+    object-fit: cover;  
+    
+    cursor: pointer;               
+    transition: 0.2s;  
+  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  &__img:hover { 
+    opacity: 0.7;
+  }
+
+}
+/***** module tile-preview *****/
+
+/***** TODO - module bg-layer *********************/
+/* module bg-layer */
+$bg-layer-text_color: $color_base;
+$bg-layer_bg-attachment: fixed; /* scroll/fixed */
+$bg-layer_top: 50px; 
+$bg-layer-brand_display: none; /* block/none */
+
+/* module grid-tiles */
+$tile_border: none; /* none/1px solid #ffffff */
+$tile_bg: transparent; /* rgba(0, 0, 0, 0.3)/transparent */
+$tile-link_display: none; /* flex/none */
+$tile-icon_color: #f6f6f6;
+$tile-icon_background: #fff;
+$tile-title_color: $color_base;
+$tile-text_color: darken($color_base, 0%);
+$tile_bg-attachment: fixed; /* scroll/fixed */
+
+/* module grid-tiles */
+$mod-tile-link_display: flex;     /* flex/none */
+$mod-tile-icon_color: $elements-style_color;
+$mod-tile-icon_background: transparent;
+$mod-tile-title_color: $elements-style_color;
+$mod-tile-text_color: darken($color_base, 30%);
+$mod-tile_bg-attachment: fixed; /* scroll/fixed */
+
+
+.bg-layer {
+  position: relative; /* TODO -for &::after */
+  max-width: calc(100%);    
+  padding-top: $bg-layer_top;
+  padding-bottom: 10px;
+   
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../img/team-bg.jpg');
+  /*background-image: url('../img/bg.jpg');*/
+  display: block;
+  max-width: 100%;
+  min-height: 60vh;  	 
+  background-size: cover;
+  background-position: 50% 55%;  
+  background-repeat: no-repeat;
+  background-attachment: $bg-layer_bg-attachment;
+  /*background: url('../img/bg.jpg') 50% 55% / cover no-repeat fixed;*/ 
+  z-index: 10;
+  
+  &::after { 
+    display: none; /* TODO */
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background: rgba(51, 51, 51, 0.5);
+    /*background: rgba(256, 256, 256, 0.2);*/  
+  }
+    
+  &__content {    
+    position: relative;
+    z-index: 40;    
+  }   
+  
+  &__title {      
+    margin: 0 auto;
+    padding: 5px 0;            
+    font-family: serif;
+    font-size: calc(35px + (40 + 40 * 0.7) * (100vw - 320px) / 1920);
+    font-weight: 400;
+    text-align: center;       
+    color: $bg-layer-text_color;
+    @media screen and (min-width: 645px) {
+      max-width: 70%;
+      font-size: 3.2rem;
+    }    
+  }
+  
+  &__text {                  
+    margin: 0 auto;     
+    padding: 5px 0; 
+    font-size: 1.1rem; 
+    letter-spacing: 0px;    
+    line-height: 2;        
+    text-align: center;
+    color: $bg-layer-text_color;  
+    @media screen and (min-width: 768px) {
+      max-width: 80%;          
+    }         
+  }
+  
+}
+
+/***** module bg-layer *********************/
+
+/***** TODO - module grid-tiles *********************/
+.grid-tiles {
+  max-width: calc(100%); 
+  /*margin-bottom: 10px;*/
+  padding: 50px 0;    
+ 
+}
+
+/***** grid/flex *****/
+.grid-tiles__tiles-box {
+  display: grid;
+  grid-gap: 20px;  
+  grid-template-columns: repeat(1, 1fr); 
+  grid-auto-rows: minmax(100px, auto);
+  @media screen and (min-width: 650px) {       
+    grid-template-columns: repeat(2, 1fr);  
+    /*grid-template-columns: repeat(3, 1fr); /**/    
+  }  
+ /* @media screen and (min-width: 950px) {      
+    grid-template-columns: repeat(3, 1fr);      
+  } */
+            
+}
+  
+.tiles-box__tile {    
+  &.tile {
+    border-radius: 20px;
+    background: $tile_bg;
+    box-shadow: 0; /* 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* TODO - shadow */
+    @media screen and (min-width: 991px) {
+      /*width: 215px;*/   
+    }
+  }
+    
+}
+
+.tile { 
+  border: $tile_border;
+  padding: 10px 0;   
+  
+  &__link {   
+    display: $tile-link_display; /* flex/none */        
+    flex-direction: row;
+    justify-content: center;  
+    align-items: center;    
+    width: 80px;
+    height: 80px;  
+    margin: 10px 0;  
+    font-size: 16px;      
+    border-radius: 50%; 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);        
+    &:hover {
+      opacity: 0.6; 
+      cursor: pointer;
+    }   
+  }
+  
+  &__link-icon { 
+    display: block;
+    width: 100%;
+    height: 100%;           
+    font-size: 2.7em;               
+    color: $tile-icon_color;  
+    border-radius: 50%; 
+    background: $tile-icon_background; 
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    
+    /* TODO - https://www.cssmatic.com/box-shadow - Box Shadow CSS Generator */
+    /*-webkit-box-shadow: 0px 16px 19px -10px rgba(204,204,204,1);
+    -moz-box-shadow: 0px 16px 19px -10px rgba(204,204,204,1);
+    box-shadow: 0px 16px 19px -10px rgba(204,204,204,1); */  
+    -webkit-box-shadow: 0px 6px 10px 1px rgba(112,112,112,0.19);
+    -moz-box-shadow: 0px 6px 10px 1px rgba(112,112,112,0.19);
+    box-shadow: 0px 6px 10px 1px rgba(112,112,112,0.19);  
+  }
+  
+  &__tile-title {
+    height: calc(1.3em * 2.4);
+    margin: 0.5em 0;             
+    padding: 0.5em 0;
+    font-size: 1.3rem;
+    font-weight: 400; 
+    text-align: left; 
+    /*text-transform: uppercase;*/ 
+    /*word-break: break-all;*/                            
+    color: $tile-title_color;   
+  }
+  
+  &__tile-text {
+    margin: 5px 0;         
+    padding: 5px 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+    color: $tile-text_color;     
+  }  
+  
+}
+
+/***** module grid-tiles *********************/
+
+
+/***** TODO - module description *******/
+.description {     
+  max-width: 100%;                               
+  margin: 0 auto;
+  padding: 0; 
+  
+  &__list {                   
+    max-width: 100%;     
+    margin: 0;   
+    padding: 0;  
+  }
+  
+  &__list-item { 
+    position: relative;
+    max-width: 100%; 
+    height: auto;
+    margin: 0 0.32em;
+    padding: 0.32em 0 0.32em 0.5em;
+    
+    text-align: left;   
+    color: $color_base;                      
+    letter-spacing: 0;    
+    line-height: 1.4;
+    font-size: 1rem;
+    
+    &::after {
+      display: block;
+	  content: '';
+	  position: absolute;
+	  top: 0.7em;
+	  left: -1em;
+	  width: 1em;
+	  height: 0.5em;
+	  border-left: 0.187em solid $color_base;
+	  border-bottom: 0.187em solid $color_base;
+	  -webkit-transform: rotate(-45deg);
+	  transform: rotate(-45deg);
+    }                                    
+  }
+  
+  &__list-text { 
+    
+  }
+   
+}
+
+/********** module description ***********/
+
+/***** TODO - module mod-tiles *********************/
+.mod-tiles {     
+  max-width: calc(100%); 
+  /*margin-bottom: 10px;*/
+  padding: 50px 0;  
+  display: block;
+  max-width: 100%;
+  min-height: 60vh;  	
+  background-size: cover;
+  background-position: 0% 0%;   
+  background-repeat: no-repeat;
+  background-attachment: $mod-tile_bg-attachment;    
+  
+  &__prev-title {  
+    margin: 0px 5px;
+    padding: 0; 
+    text-align: center;
+    font-size: 2rem; 
+    /*font-size: calc(25px + (40 + 40 * 0.7) *(100vw - 320px) / 1920);*/
+    font-weight: 400;       
+    color: #575757;
+    @media screen and (min-width: 645px) {
+      font-size: 2.8rem;
+    }   
+  }
+  
+  &__prev-text {    
+    max-width: 100%; 
+    margin: 20px 0px 50px 0px;
+    font-size: 1.5rem;     
+    text-align: center; 
+    letter-spacing: 6px;  
+    color: #575757;
+    @media screen and (min-width: 645px) {
+      font-size: 1.75rem;
+    }  
+  }
+ 
+}
+
+/***** grid/flex *****/
+.mod-tiles__tiles-box {     
+  display: grid;
+  grid-gap: 20px;  
+  grid-template-columns: repeat(1, 1fr); 
+  grid-auto-rows: minmax(100px, auto);
+  @media screen and (min-width: 548px) {       
+    grid-template-columns: repeat(2, 1fr);      
+  }  
+  @media screen and (min-width: 750px) {      
+    grid-template-columns: repeat(3, 1fr);      
+  }
+            
+}
+  
+.mod-tiles-box__tile {    
+  &.tile {
+    border-radius: 20px;                 
+    background: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* TODO - shadow */ 
+    @media screen and (min-width: 991px) {
+      /*width: 215px;*/   
+    }
+  }
+    
+}
+
+.mod-tile {
+  &__link {   
+    display: $mod-tile-link_display; /* flex/none */        
+    flex-direction: row;
+    justify-content: flex-start;  
+    align-items: center;    
+      
+    margin: 0;  
+    font-size: 16px;      
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);        
+    &:hover {
+      opacity: 0.6; 
+      cursor: pointer;
+    }   
+  }
+  
+  &__link-icon { 
+    display: block;
+               
+    font-size: 2.7em;               
+    color: $mod-tile-icon_color;  
+     
+    background: $mod-tile-icon_background; 
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    
+    
+  }
+  
+  &__tile-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    min-height: calc(1.3rem * 4);
+    margin: 8px;            
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: 400; 
+    text-align: left; 
+    text-transform: uppercase; 
+    /*word-break: break-all;*/                            
+    color: $mod-tile-icon_color;   
+  }
+  
+  &__tile-text {
+    margin: 10px 0;         
+    padding: 0 15px;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+    color: #575757;     
+  }  
+  
+}
+
+.container-alignment {
+  display: flex; /* flex/none */        
+  flex-direction: row;
+  justify-content: flex-start;  
+  align-items: center; 
+  padding: 0 15px;
+}
+
+/***** module grid-tiles *********************/
+
+.questions {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 20px; 
+    margin-left: auto;
+    margin-right: auto; 
+    padding-left: 0;
+    border: none;  
+    text-align: center;
+    line-height: 1.2;
+    font-size: 2rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #535353;
+    @media screen and (max-width: 767px) {  
+      font-size: 1.7rem;  
+      text-align: left;
+    } 
+  }
+}
+
+
+
+
+

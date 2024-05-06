@@ -1,0 +1,37 @@
+/* main variables */
+:root {
+  --shadow-floating-small: 0 2px 8px rgba(31, 35, 40, 0.2);
+  --color-overlay-shadow: 0 16px 48px rgba(66, 74, 83, 0.2);
+}
+
+$inner_width: 100%;
+$elements-style_color: darken(#a6bbd4, 15%);
+
+/* Header */
+$hover: #e6e6e6;
+$header_bg: $elements-style_color; /* transparent; rgba(0, 0, 0, 0.7);*/
+$header-logo_hover: darken($hover, 90%);
+$header-line_bg: silver;
+
+/* Menu */
+$menu_width: 50%; /* 100% */
+$menu-link_color: #ffffff;
+$menu-icon_color: #ffffff;
+$menu-icon_hover: silver;
+$menu-link_hover: silver;
+$menu-link-active_color: darken(silver, 10%);
+/*$menu-link-active_color: lighten(#000000, 70%); /**/
+
+$mob-menu_width: 320px; /* 320px; 100%; */
+$mob-menu_bg: #e6e6e6;
+$mob-menu-link_color: #ffffff;
+$mob-menu-item_bg: $elements-style_color;
+$mob-menu-list_width: 100%; /* 100% - if $mob-menu_width: 320px */
+$mob-menu-list_width-media: 100%;
+
+/* Footer */
+$footer_bg: $elements-style_color;
+$footer-logo_hover: lighten(#000000, 50%);
+$footer-social_color: darken(#444444, 8%);
+$footer-social_hover: lighten(#444444, 40%);
+
