@@ -96,7 +96,7 @@ section:nth-child(even) {
     justify-content: center;
     align-items: center;   
     text-align: center;
-    font-family: 'Open Sans', Arial, Verdana, 'Times New Roman', 
+    /*font-family: 'Open Sans', Arial, Verdana, 'Times New Roman', 
                  'Liberation Sans', 'DejaVu Sans', Calibri, Helvetica, sans-serif;
     /*font-family: Amatic SC, sans-serif; /**/
     font-weight: 400;  
@@ -212,8 +212,8 @@ section:nth-child(even) {
      
 }
 
-/* s-06 */
-.news {
+/* about */
+.about {
   padding: 22px 0;
   &__title {           
     /*width: 30%;*/
@@ -241,6 +241,7 @@ section:nth-child(even) {
   } 
 
   &__text {
+    
     margin-bottom: 10px;
   }
 
@@ -259,8 +260,23 @@ section:nth-child(even) {
   
 }
 
-/* s-07 */
-.latest {
+.pop-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content:  center; 
+  width: 100%;
+  margin: auto;
+}
+
+.pop-btn {
+  margin: 7px 10px 7px 0;
+  font-size: 16px;
+  border-radius: 6px;  
+  border: 1px solid #7294bb; 
+}
+
+/* last-news */
+.last-news {
   padding: 22px 0;
   background: #f6f6f8;
   &__inner {
@@ -446,7 +462,7 @@ $bg-layer_bg-attachment: fixed; /* scroll/fixed */
 $bg-layer-brand_display: none; /* block/none */
 
 /* module grid-tiles */
-$tile_border: none; /* none/1px solid #ffffff */
+$tile_border: 1px solid #ffffff; /* none/1px solid #ffffff */
 $tile_bg: transparent; /* rgba(0, 0, 0, 0.3)/transparent */
 $tile-link_display: none; /* flex/none */
 $tile-icon_color: #f6f6f6;
@@ -465,9 +481,9 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
 
 
 .bg-layer {
-  position: relative; /* TODO -for &::after */ 
+  position: relative; /* TODO -for &::after */
   max-width: calc(100%);    
-  padding: 22px 0;   
+  padding-top: 11px;  
   background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../img/team-bg.jpg');
   /*background-image: url('../img/bg.jpg');*/
   display: block;
@@ -498,12 +514,13 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
   }   
   
   &__title {      
-    margin: 0 auto;
-    padding: 5px 0;            
+    margin: 0 auto;     
+    padding: 0;            
     font-family: serif;
     font-size: calc(35px + (40 + 40 * 0.7) * (100vw - 320px) / 1920);
     font-weight: 400;
-    text-align: center;       
+    text-align: center;  
+    line-height: normal;     
     color: $bg-layer-text_color;
     @media screen and (min-width: 645px) {
       max-width: 70%;
@@ -532,7 +549,7 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
 .grid-tiles {
   max-width: calc(100%); 
   /*margin-bottom: 10px;*/
-  padding: 50px 0;    
+  padding: 22px 0;    
  
 }
 
@@ -609,9 +626,9 @@ $mod-tile_bg-attachment: fixed; /* scroll/fixed */
   }
   
   &__tile-title {
-    height: calc(1.3em * 2.4);
-    margin: 0.5em 0;             
-    padding: 0.5em 0;
+    min-height: calc(1.3em * 2.4); /* для выравнивания по высоте соседских абз. */
+    margin: 0;             
+    padding: 0;
     font-size: 1.3rem;
     font-weight: 400; 
     text-align: left; 

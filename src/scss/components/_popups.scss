@@ -17,13 +17,17 @@
   position: absolute;
 }
 
-.more { 
-/* The actual popup (appears on top) */
+.pop-icons {
+  margin-left: 5px;
+}
+
+.more { color: #7294bb; padding: 5px 8px;
+/* The actual popup (appears on top) */ display: block;
   &__popup {    
     width: 160px;
     bottom: 125%;
-    left: 100%;
-    margin-left: -80px;
+    right: 0%;
+    /*margin-left: -80px;*/
     padding: 8px 0;
     background-color: #555;
     color: #fff;
@@ -49,16 +53,46 @@
   }
 }
 
-
-
-.details {
-  color: red;
+.read { color: #7294bb; padding: 5px 8px;    display: block;
 /* The actual popup (appears on top) */
   &__popup {    
-    width: 160px;
-    bottom: -40%;
-    left: 210%;
-    margin-left: -85px;
+    width: 200px;
+    bottom: 125%;
+    left: 0%;
+    /*margin-left: -80px;*/
+    padding: 8px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;            
+  }
+
+  /* Popup arrow */
+  &__popup::after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s
+  }
+}
+
+.details {color: #7294bb; display: block; padding: 5px 8px;
+  
+/* The actual popup (appears on top) */
+  &__popup {    
+    width: 200px;
+    top: 125%;
+    left: 0%;
+    /*margin-left: 10px;*/
     padding: 8px 0;
     color: #404040;
     text-align: center;
@@ -69,12 +103,12 @@
 
   /* Popup arrow */
   &__popup::after {
-    top: 40%;
-    left: -4%;
+    bottom: 100%;
+    left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent #f1f1f1 transparent transparent;
+    border-color: transparent transparent #f1f1f1 transparent;
   }
 
   /* Toggle this class when clicking on the popup container (hide and show the popup) */

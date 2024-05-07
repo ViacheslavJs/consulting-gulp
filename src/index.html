@@ -38,21 +38,44 @@
             </div><!--l-->
                                              
           </section>
-
-
-          <!-- TODO - module s-01 -->
-          <section class="news">   
+                   
+          <section class="about">   
             <div class="container">   
-              <h2 class="news__title">
+              <h2 class="about__title">
                 Über uns 
               </h2> 
-              <p class="news__text">
+              <p class="about__text">
                 Wir sind ein führendes Beratungsunternehmen, das innovative Lösungen und Expertenunterstützung im Bereich strategisches Management und technologische Lösungen bietet. Unsere Mission ist es, Kunden dabei zu helfen, herausragende Ergebnisse zu erzielen und geschäftliche Herausforderungen zu meistern. Schließen Sie sich uns an und gemeinsam werden wir eine erfolgreiche Zukunft gestalten!
+              
               </p>
-              <span class="news__span">Gemeinsam zum Erfolg!</span>   
+              <span class="about__span">Gemeinsam zum Erfolg!</span>   
             </div><!-- container -->      
-                                                           
-          </section><!-- module s-01 -->
+         
+         <div class="pop-buttons">  
+           <div class="container">  
+  
+             <button class="pop-btn">
+               <span class="js-popup read">Unsere Dienstleistungen<i class="pop-icons fas fa-plus"></i>
+                  <span class="popup read__popup">Popup 1...</span>
+                </span>
+             </button>        
+           
+             <button class="pop-btn">
+               <span class="js-popup details">Arbeitsablauf<i class="pop-icons fas fa-plus"></i>
+                 <span class="popup details__popup">Popup 2...</span>
+               </span>
+             </button>
+
+             <button class="pop-btn">
+               <span class="js-popup more">Weitere<i class="pop-icons fas fa-plus"></i>
+                 <span class="popup more__popup">Popup 3... asergvtrvgtr</span>
+               </span>
+             </button>
+
+           </div><!-- container --> 
+         </div><!-- container -->    
+                                
+          </section>
           
 
           <div class="container">
@@ -62,11 +85,9 @@
             @@include('html/components/lightbox.html', {})          
           </div>
           
-          <div class="container">
-            <div class="js-popup more"><i class="fas fa-plus"></i>Click me!
-              <div class="popup more__popup">Popup 1... asergvtrvgtr</div>
-            </div>              
-          </div>  
+          
+                         
+          
 
 <div class="container"><div id="acc1">
             <button class="accordion about__accordion">Section 1</button>
@@ -309,27 +330,27 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
 
 
 
-          <!-- TODO - module s-02 -->
-          <section class="latest">   
+          
+          <section class="last-news">   
             <div class="container"> 
-              <div class="latest__inner">   
-                <span class="latest__span">Bleiben Sie auf dem Laufenden!</span>  
-                <h2 class="latest__title">
+              <div class="last-news__inner">   
+                <span class="last-news__span">Bleiben Sie auf dem Laufenden!</span>  
+                <h2 class="last-news__title">
                   Die neuesten Nachrichten 
                 </h2>  
-                <p class="latest__text">
+                <p class="last-news__text">
                   Start eines neuen Softwareprodukts: "Innovative Lösungen" freut sich, die Einführung ihres neuesten Softwareprodukts bekannt zu geben, das zur Optimierung von Geschäftsprozessen im Bereich Finanzen und Personalmanagement entwickelt wurde. Dieses innovative Tool bietet einen revolutionären Ansatz zur Datenverwaltung und -analyse und hilft Unternehmen, die Effizienz ihrer Operationen zu steigern und fundiertere strategische Entscheidungen zu treffen.
                 </p>
-                <p class="latest__text">
+                <p class="last-news__text">
                   Partnerschaft mit einem großen Investmentfonds: "Innovative Lösungen" haben eine strategische Partnerschaft mit einem der führenden Investmentfonds in der Region geschlossen. Diese Zusammenarbeit wird unserem Unternehmen Zugang zu zusätzlichen Ressourcen und Expertise ermöglichen, um unsere Forschungs- und Entwicklungstätigkeiten zu vertiefen und unseren Kundenstamm zu erweitern.
                 </p>
-                <p class="latest__text">
+                <p class="last-news__text">
                   Erfolgreicher Abschluss eines ERP-Systemimplementierungsprojekts: Wir haben erfolgreich ein Projekt zur Implementierung eines ERP-Systems für einen großen Kunden aus dem Fertigungssektor abgeschlossen. Das neue System half dabei, Ressourcenmanagementprozesse zu optimieren und die betriebliche Effizienz des Unternehmens zu verbessern. Dieses Projekt bestätigt unsere Fähigkeit, komplexe Lösungen in die Praxis umzusetzen und signifikante Ergebnisse für unsere Kunden zu erzielen.
                 </p>
-              </div><!-- container -->   
+              </div> 
             </div><!-- container -->      
                                                            
-          </section><!-- module s-02 -->
+          </section>
 
           <div class="container">
             <!-- module tile-preview --> 
@@ -383,11 +404,9 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
           </div><!-- container -->
           @@include('html/components/tile-lightbox.html', {})    
 
-          <div class="container">  
-            <div class="js-popup details">Click me!<i class="fas fa-angle-down"></i>
-              <div class="popup details__popup">Popup 2...</div>
-            </div>
-          </div> 
+          
+            
+          
 
 <div class="container-swiperLatest">                            
               @@include('html/components/swiper-latest.html', {})                
