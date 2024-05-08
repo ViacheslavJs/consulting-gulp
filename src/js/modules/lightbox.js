@@ -16,8 +16,8 @@ const imageFilters = `${blockName}-filters`;
 
 try {
   const moduleLightbox = document.querySelectorAll(buttonClick); 
-  console.log(moduleLightbox);
-  console.log(moduleLightbox !== null);
+  //console.log(moduleLightbox);
+  //console.log(moduleLightbox !== null);
   if (moduleLightbox !== null) {
 //
 

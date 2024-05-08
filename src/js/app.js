@@ -39,7 +39,11 @@ import { lightbox } from "./modules/lightbox.js";
 lightbox();
 
 import { popUp } from "./modules/popups.js";
-popUp();
+popUp({
+
+  keepOpenAll: true,
+
+});
 
 import { accordion } from "./modules/accordion.js";
 accordion();

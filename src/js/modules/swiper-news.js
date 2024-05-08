@@ -2,7 +2,7 @@ export const sliderSwiperNews = () => {
 
 try {
   const moduleSliderSwiperNews = document.getElementById('sliderSwiperNews'); 
-  console.log(moduleSliderSwiperNews);
+  //console.log(moduleSliderSwiperNews);
   if (moduleSliderSwiperNews !== null) {
   
 /////////////////////////////////////

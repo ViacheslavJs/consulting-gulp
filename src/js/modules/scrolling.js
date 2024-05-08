@@ -9,18 +9,18 @@ export const scrolling = () => {
 
   const btnChat = document.querySelector('.chat-btn');
   const chat = document.querySelector('.chat-window');
-  console.log(btnChat);
+  //console.log(btnChat);
   btnChat.addEventListener('click', ()=> {
     const containsClass = chat.classList.contains('chat-active');
-    console.log(containsClass);
+    //console.log(containsClass);
   });
 
   const btnSupport = document.querySelector('.support-btn');
   //const support = document.querySelector('.support');
-  console.log(btnSupport);
+  //console.log(btnSupport);
   btnSupport.addEventListener('click', ()=> {
     const containsCl = support.classList.contains('support-hidden');
-    console.log(containsCl);
+    //console.log(containsCl);
   });
 
 
@@ -28,7 +28,7 @@ export const scrolling = () => {
     let top = window.pageYOffset;  
     const chatActive = chat.classList.contains('chat-active');
     const supportActive = support.classList.contains('support-visible'); 
-    console.log(supportActive);
+    //console.log(supportActive);
     
       if (scroll > top) {
         header.classList.remove('header--scroll');

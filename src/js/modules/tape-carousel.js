@@ -310,10 +310,10 @@ const previewImg = document.querySelector('.t-carousel__preview-img');
 // Получаем значение переменной CSS
 const previewWidth = getComputedStyle(previewImg).getPropertyValue('--preview-width');
 
-console.log(previewWidth);
+//console.log(previewWidth);
 const num = parseInt(previewWidth); // 352
 
-console.log(num); 
+//console.log(num); 
 let width = num; // image width
 let count = 1; // visible images count - 1, 0.5, 0.75
 

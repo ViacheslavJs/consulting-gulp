@@ -125,7 +125,7 @@ itemImg.forEach(s => {
 
 // проверка наличия элементов превью на странице:
 const collection = [itemImg];
-console.log(collection);
+//console.log(collection);
 
 // обработчик иконки close:
 //const clickedClass = event.target.className;

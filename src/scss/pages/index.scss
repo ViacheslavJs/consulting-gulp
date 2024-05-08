@@ -257,23 +257,21 @@ section:nth-child(even) {
       text-align: left; 
     } 
   } 
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    /*gap: 10px; /* if space-between; flex-start; or flex-end */ 
+    flex-wrap: wrap;
+    word-break: break-all; /* word-wrap: wrap; */  
+    width: 100%;
+    margin: auto;
+  }
   
 }
 
-.pop-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content:  center; 
-  width: 100%;
-  margin: auto;
-}
-
-.pop-btn {
-  margin: 7px 10px 7px 0;
-  font-size: 16px;
-  border-radius: 6px;  
-  border: 1px solid #7294bb; 
-}
 
 /* last-news */
 .last-news {
@@ -389,7 +387,7 @@ section:nth-child(even) {
 /* стиль для неизменённых(соотн. сторон как есть) изображений */
 .tile-preview {  
   max-width: calc(100%);
-  margin: 50px auto;               
+  margin: 22px auto;               
   padding: 0px; 
     
   @media screen and (orientation: landscape) {
