@@ -1,6 +1,7 @@
 export const popUp = (options) => {
   const clickName = 'js-popup'; // класс кнопок
   const popUpName = 'popup'; // класс всплывающих окон
+  const popIcons = 'pop-icons'; // класс иконок
 
   const clickElement = `.${clickName}`;
   const popUpSelector = `.${popUpName}`;
@@ -39,12 +40,17 @@ export const popUp = (options) => {
   window.addEventListener('resize', updatePopupPositionClass);
 
   if (options.keepOpenAll) {
-  
+
     // Event listener for click on parent elements
     parentElems.forEach(parentElem => {
       parentElem.addEventListener('click', function(event) {
+        const btn = this.querySelector(clickElement); 
+        /*const isTargetBtn = event.target.classList.contains(clickName) || 
+              event.target.classList.contains(popIcons); // or */
+        const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}`); // or
+        console.log(isTargetBtn); 
         const popup = this.querySelector(popUpSelector);
-        if (popup && event.target !== popup) {
+        if (isTargetBtn) {
           popup.classList.toggle("show");
         }
         event.stopPropagation();
@@ -60,16 +66,19 @@ export const popUp = (options) => {
         }
       });
     });
+
+  } else {
   
-  } //if
-
-  else {
-
     // Event listener for click on parent elements
     parentElems.forEach(parentElem => {
       parentElem.addEventListener('click', function(event) {
+        const btn = this.querySelector(clickElement); 
+        /*const isTargetBtn = event.target.classList.contains(clickName) || 
+              event.target.classList.contains(popIcons); // or */
+        const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}`); // or
+        console.log(isTargetBtn); 
         const popup = this.querySelector(popUpSelector);
-        if (popup && event.target !== popup) {
+        if (isTargetBtn) {
           // Toggle visibility of the clicked popup
           popup.classList.toggle("show");
 
@@ -103,7 +112,7 @@ export const popUp = (options) => {
       }
     });
 
-  } //else
+  } // options.keepOpenAll
 
 };
 

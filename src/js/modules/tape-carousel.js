@@ -52,7 +52,7 @@ function setDuration(sec) {
   //console.log(millSec);
   return millSec;
 }
-const millSec = setDuration(0.5);
+const millSec = setDuration(0.4);
 
 function stopAnimation() {  
   let timer; 
@@ -106,7 +106,7 @@ itemI.forEach(s => {
     //console.log(sIndex);
     showModalImg();
     counterImg(sIndex + 1);
-    //clearInterval(timer); // if auto play
+    clearInterval(timer); // if auto play
   });
 });
 //
@@ -335,7 +335,7 @@ carousel.querySelector('.t-prev').onclick = function() {
   // can't move to the left too much, end of images
   position = Math.min(position, 0)
   list.style.marginLeft = position + 'px'; 
-  //clearInterval(timer); // if auto play
+  clearInterval(timer); // if auto play
 };
             
 carousel.querySelector('.t-next').onclick = function() {
@@ -344,12 +344,12 @@ carousel.querySelector('.t-next').onclick = function() {
   // can only shift the ribbbon for (total ribbon length - visible count) images
   position = Math.max(position, -width * (listElems.length - count));
   list.style.marginLeft = position + 'px'; 
-  //clearInterval(timer); // if auto play
+  clearInterval(timer); // if auto play
   //console.log(position);
 };
 //
 
-/*
+
 // auto play - uncomment "clearInterval(timer)":
 let timer;    
 timer = window.setInterval( function() {
@@ -361,7 +361,7 @@ timer = window.setInterval( function() {
   //console.log(listElems.length);
   
   // return to start:
-  let endPosition = (listElems.length * width) - 300; 
+  let endPosition = (listElems.length * width) - width; 
   //console.log(endPosition);
   if (position == -endPosition) {
     setTimeout( function() {
@@ -372,7 +372,7 @@ timer = window.setInterval( function() {
   
 }, 4000); 
 
-let sec = listElems.length * 2000; 
+let sec = listElems.length * 4000; 
 //console.log(sec); // TODO
 let stopSlide;
   stopSlide = window.setTimeout( function() {
@@ -380,7 +380,7 @@ let stopSlide;
 }, sec);
 stopSlide();
 //
-*/
+
             
 })(); // immediately invoked functions
 
