@@ -46,33 +46,8 @@
 }
 
 .footnote {   
-  padding: 5px 8px;
-  color: #a5bad3; 
-/* The actual popup (appears on top) */ 
-  &__popup {    
-    width: 160px;
-    bottom: 125%;
-    
-    /*margin-left: -80px;*/
-    padding: 8px 0;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px; 
-    box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));            
-  }
-
-  /* Popup arrow */
-  &__popup::after {
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  padding: 0;
+  color: #a5bad3;   
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;
@@ -80,37 +55,163 @@
   }
 }
 
+.footnote-popup {    
+  width: 160px;
+  bottom: 125%;
+  padding: 8px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px; 
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));            
+}
+
+.footnote::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.serv {   
+  padding: 5px 8px; 
+  color: #7294bb;        
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s
+  }
+}
+
+.serv-popup {   
+  min-width: 320px; 
+  min-height: 150px; 
+  bottom: 125%;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2))); 
+  @media screen and (max-width: 385px) {     
+    min-width: 220px;         
+  }            
+}
+
+.serv-popup::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* serv content */
+.serv-pop-content {
+  &__inner {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    @media screen and (max-width: 385px) {     
+      flex-direction: column;
+      align-items: flex-start;        
+    }
+  }
+
+  &__circle {
+    position: relative;
+    width: 100px; /* 150px; */
+    height: 100px; /* 150px; */
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+    flex-shrink: 0; /* Prevent container from shrinking */
+  }
+
+  &__circle::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  &__sector {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    clip: rect(0px, 50px, 100px, 0px); /* убираем лишнюю ширину */
+    /*clip: rect(0px, 75px, 150px, 0px);*/
+  }
+
+  .safari {
+    background-color: #aaaaaa;
+    transform: rotate(-20deg);
+  }
+
+  .ie {
+    background-color: #0074d9;
+    transform: rotate(160deg);
+  }
+
+  .firefox {
+    background-color: #ff851b;
+    transform: rotate(20deg);
+  }
+
+  .chrome {
+    background-color: #2ecc40;
+    transform: rotate(100deg);
+  }
+
+  &__items {
+    margin-left: 0; /* Adjust as needed */
+    flex-grow: 1; /* Allow stats to grow and take remaining space */
+    text-align: left;
+  }
+
+  &__item {
+    position: relative;
+    margin: 10px 0;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -25px;
+    width: 15px;
+    height: 15px;
+    background-color: #aaaaaa;
+  }
+
+  &__item:first-child::before {
+    background-color: #2ecc40;
+  }
+
+  &__item:nth-child(2)::before {
+    background-color: #ff851b;
+  }
+
+  &__item:nth-child(3)::before {
+    background-color: #0074d9;
+  }
+
+}
 
 
 .more { 
   display: block;
   padding: 5px 8px;
-  color: gray; 
-/* The actual popup (appears on top) */ 
-  &__popup {    
-    width: 160px;
-    bottom: 125%;
-    
-    /*margin-left: -80px;*/
-    padding: 8px 0;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px; 
-    box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));            
-  }
-
-  /* Popup arrow */
-  &__popup::after {
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  color: gray;     
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;
@@ -118,76 +219,55 @@
   }
 }
 
-.read { 
-  
-  padding: 5px 8px; 
-  color: #7294bb;    
-/* The actual popup (appears on top) */
-  &__popup {    
-    min-width: 260px; min-height: 150px; 
-    bottom: 125%;
-    
-    /*margin-left: -80px;*/
-    padding: 8px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));             
-  }
-
-  /* Popup arrow */
-  &__popup::after {
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 0.2s;
-    animation: fadeIn 0.2s
-  }
+.more-popup {    
+  width: 160px;
+  bottom: 125%;
+  padding: 8px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px; 
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));            
 }
 
-.details {
+.more-popup::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.processes {
   display: block; 
   padding: 5px 8px;
   color: #eb4326; 
-/* The actual popup (appears on top) */
-  &__popup {    
-    width: 220px;
-    top: 125%;
-    /*left: 0%;*/
-    /*margin-left: 10px;*/
-    padding: 8px 0;
-    color: #404040;
-    text-align: center;
-    border-radius: 3px;               
-    background-color: #ffffff;  
-    box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2))); 
-  }
-
-  /* Popup arrow */
-  &__popup::after {
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #f1f1f1 transparent;
-  }
-
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;
     animation: fadeIn 0.2s
   }
+}
+
+.processes-popup {
+  width: 220px;
+  top: 125%;
+  padding: 8px;
+  color: #404040;
+  text-align: center;
+  border-radius: 3px;               
+  background-color: #ffffff;  
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));
+}
+
+.processes-popup::after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #f1f1f1 transparent;
 }
 
 /* Add animation (fade in the popup) */
@@ -200,98 +280,4 @@
   from {opacity: 0;}
   to {opacity:1 ;}
 } 
-
-/* content */
-.pie-container {
-    position: relative;
-    width: 100px; /* 150px; */
-    height: 100px; /* 150px; */
-    border-radius: 50%;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
-    flex-shrink: 0; /* Prevent container from shrinking */
-}
-
-.pie-container::after {
-    content: "";
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    background-color: #f5f5f5;
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.8);
-}
-
-.pie {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    clip: rect(0px, 50px, 100px, 0px); /* убираем лишнюю ширину */
-    /*clip: rect(0px, 75px, 150px, 0px);*/
-}
-
-/* Adjust z-index and transform for each browser slice */
-#safari {
-    background-color: #aaaaaa;
-    transform: rotate(-20deg);
-}
-
-#ie {
-    background-color: #0074d9;
-    transform: rotate(160deg);
-}
-
-#firefox {
-    background-color: #ff851b;
-    transform: rotate(20deg);
-}
-
-#chrome {
-    background-color: #2ecc40;
-    transform: rotate(100deg);
-}
-
-.flex-alignment {
-    display: flex; 
-    flex-direction: row;
-    align-items: center; /* Align children vertically */
-}
-
-.stats {
-    margin-left: 0px; /* Adjust as needed */
-    flex-grow: 1; /* Allow stats to grow and take remaining space */
-}
-
-
-
-
-.stats__item {
-    position: relative;
-    margin: 10px 0;
-}
-
-.stats__item::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: -25px;
-    width: 15px;
-    height: 15px;
-    background-color: #aaaaaa;
-}
-
-.stats__item:first-child::before {
-    background-color: #2ecc40;
-}
-
-.stats__item:nth-child(2)::before {
-    background-color: #ff851b;
-}
-
-.stats__item:nth-child(3)::before {
-    background-color: #0074d9;
-}
-
 

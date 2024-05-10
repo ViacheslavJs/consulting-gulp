@@ -24,7 +24,7 @@ export const popUp = (options) => {
         // Determine the relative position of the button
         if (buttonCenter > screenCenter) {
           // Button closer to the right edge
-          popup.classList.remove('left', 'c');
+          popup.classList.remove('left');
           popup.classList.add('right');
         } else {
           // Button closer to the left or centered
