@@ -17,24 +17,11 @@
   position: absolute;
 }
 
-.pop-btn {
-  margin: 5px;
-  font-size: 16px;
-  border-radius: 6px; 
-  &--serv {
-    border: 1px solid #7294bb;
-  }
-  &--more {
-    border: 1px solid gray;
-  }
-  &--processes {
-    border: 1px solid #eb4326;
-  }
- 
-}
-
 .pop-icons {
   margin-left: 5px;
+  &--footnote {
+    margin: 3px;    
+  }
 }
 
 .left {
@@ -45,9 +32,13 @@
   right: 0;
 }
 
-.footnote {   
+.footnote-btn {   
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 6px;
   padding: 0;
-  color: #a5bad3;   
+  color: #50a3ff; 
+  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2))); 
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;
@@ -66,7 +57,7 @@
   box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2)));            
 }
 
-.footnote::after {
+.footnote-popup::after {
   top: 100%;
   left: 50%;
   margin-left: -5px;
@@ -75,9 +66,13 @@
   border-color: #555 transparent transparent transparent;
 }
 
-.serv {   
+.serv-btn {  
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 6px; 
   padding: 5px 8px; 
-  color: #7294bb;        
+  color: #7294bb; 
+  border: 1px solid #7294bb;       
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;
@@ -208,9 +203,13 @@
 }
 
 
-.more { 
+.more-btn { 
   display: block;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 6px;
   padding: 5px 8px;
+  border: 1px solid gray;
   color: gray;     
   .show {
     visibility: visible;
@@ -239,9 +238,13 @@
   border-color: #555 transparent transparent transparent;
 }
 
-.processes {
-  display: block; 
+.processes-btn {
+  display: block;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 6px; 
   padding: 5px 8px;
+  border: 1px solid #eb4326;
   color: #eb4326; 
   .show {
     visibility: visible;

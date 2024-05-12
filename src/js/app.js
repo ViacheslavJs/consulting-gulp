@@ -41,7 +41,7 @@ lightbox();
 import { popUp } from "./modules/popups.js";
 popUp({
 
-  keepOpenAll: false,
+  switchIcons: true,
 
 });
 

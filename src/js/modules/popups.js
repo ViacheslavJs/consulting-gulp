@@ -1,7 +1,10 @@
 export const popUp = (options) => {
   const clickName = 'js-popup'; // класс кнопок
   const popUpName = 'popup'; // класс всплывающих окон
-  const popIcons = 'pop-icons'; // класс иконок
+  const popIcons = 'pop-icons'; // иконока-кнопка
+  const mainClass = 'fas'; // основной класс fontawesome
+  const iconClosed = 'fa-plus';
+  const iconOpen = 'fa-minus';
 
   const clickElement = `.${clickName}`;
   const popUpSelector = `.${popUpName}`;
@@ -38,81 +41,84 @@ export const popUp = (options) => {
   // Event listeners for load and resize events
   window.addEventListener('load', updatePopupPositionClass);
   window.addEventListener('resize', updatePopupPositionClass);
-
-  if (options.keepOpenAll) {
-
-    // Event listener for click on parent elements
-    parentElems.forEach(parentElem => {
-      parentElem.addEventListener('click', function(event) {
-        const btn = this.querySelector(clickElement); 
-        /*const isTargetBtn = event.target.classList.contains(clickName) || 
-              event.target.classList.contains(popIcons); // or */
-        const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}`); // or
-        console.log(isTargetBtn); 
-        const popup = this.querySelector(popUpSelector);
-        if (isTargetBtn) {
-          popup.classList.toggle("show");
-        }
-        event.stopPropagation();
-      });
+    
+  if (options.switchIcons) {
+    const icons = document.querySelectorAll(`.${popIcons}`);
+    //console.log(icons);
+    icons.forEach(icon => {
+      //console.log(icon);
+      icon.classList.add(mainClass, iconClosed);
     });
-
-    // Event listener to close popups when clicking outside
-    document.addEventListener('click', function(event) {
-      parentElems.forEach(parentElem => {
-        const popup = parentElem.querySelector(popUpSelector);
-        if (popup && !popup.contains(event.target) && !parentElem.contains(event.target)) {
-          popup.classList.remove("show");
-        }
-      });
-    });
-
-  } else {
+  }
   
-    // Event listener for click on parent elements
-    parentElems.forEach(parentElem => {
-      parentElem.addEventListener('click', function(event) {
-        const btn = this.querySelector(clickElement); 
-        /*const isTargetBtn = event.target.classList.contains(clickName) || 
-              event.target.classList.contains(popIcons); // or */
-        const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}`); // or
-        console.log(isTargetBtn); 
-        const popup = this.querySelector(popUpSelector);
-        if (isTargetBtn) {
-          // Toggle visibility of the clicked popup
-          popup.classList.toggle("show");
+  // Event listener for click on parent elements
+  parentElems.forEach(parentElem => {
+    parentElem.addEventListener('click', function(event) {
+      const btn = this.querySelector(clickElement); 
+      /*const isTargetBtn = event.target.classList.contains(clickName) || 
+            event.target.classList.contains(popIcons); // or */
+      const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}`); // or
+      //console.log(isTargetBtn); 
+      const popup = this.querySelector(popUpSelector);
+      if (isTargetBtn) {
+        // Toggle visibility of the clicked popup
+        popup.classList.toggle("show");
 
-          // Close the previously open popup if different button is clicked
-          if (openPopup && openPopup !== popup) {
-            openPopup.classList.remove("show");
+        // Close the previously open popup if different button is clicked
+        if (openPopup && openPopup !== popup) {
+          const icon = openPopup.parentElement.querySelector(`.${popIcons}`);
+          if (options.switchIcons) {
+            icon.classList.remove(iconOpen);
+            icon.classList.add(iconClosed);
           }
-
-          // Update the openPopup variable to the current popup state
-          openPopup = popup.classList.contains("show") ? popup : null;
+          openPopup.classList.remove("show");
         }
-        event.stopPropagation();
-      });
+
+        // Update the openPopup variable to the current popup state
+        openPopup = popup.classList.contains("show") ? popup : null;
+
+        // Find the corresponding icon inside the clicked parent element
+        const icon = this.querySelector(`.${popIcons}`);
+
+        // Change the color of the icon based on popup visibility
+        if (options.switchIcons) {
+          if (popup.classList.contains("show")) {
+            icon.classList.remove(iconClosed);
+            icon.classList.add(iconOpen);
+          } else {
+            icon.classList.remove(iconOpen);
+            icon.classList.add(iconClosed);
+          }
+        }
+
+      }
+      event.stopPropagation();
     });
+  });
 
-    // Event listener to close popups when clicking outside or on another button
-    document.addEventListener('click', function(event) {
-      let clickedOnButton = false;
+  // Event listener to close popups when clicking outside or on another button
+  document.addEventListener('click', function(event) {
+    let clickedOnButton = false;
 
-      // Check if the click was on any of the buttons
-      parentElems.forEach(parentElem => {
-        if (parentElem.contains(event.target)) {
-          clickedOnButton = true;
-        }
-      });
-
-      // Close the open popup if click was outside or on another button
-      if (!clickedOnButton && openPopup) {
-        openPopup.classList.remove("show");
-        openPopup = null;
+    // Check if the click was on any of the buttons
+    parentElems.forEach(parentElem => {
+      if (parentElem.contains(event.target)) {
+        clickedOnButton = true;
       }
     });
 
-  } // options.keepOpenAll
+    // Close the open popup if click was outside or on another button
+    if (!clickedOnButton && openPopup) {
+      const icon = openPopup.parentElement.querySelector(`.${popIcons}`);
+      if (options.switchIcons) {
+        icon.classList.remove(iconOpen);
+        icon.classList.add(iconClosed);
+      }
+      openPopup.classList.remove("show");
+      openPopup = null;
+    }
+  });
+
 
 };
 
