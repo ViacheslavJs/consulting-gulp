@@ -41,8 +41,15 @@ lightbox();
 import { popUp } from "./modules/popups.js";
 popUp({
 
-  switchIcons: true,
-
+  switchIcons: false,
+  mainFontAwesome: 'fas', 
+  iconClosed: 'fa-plus',
+  iconOpen: 'fa-minus',
+  //iconClosed: 'unicode-plus',
+  //iconOpen: 'unicode-minus',
+  //iconClosed: 'unicode-arrow-down',
+  //iconOpen: 'unicode-arrow-up',
+  
 });
 
 import { accordion } from "./modules/accordion.js";

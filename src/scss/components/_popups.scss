@@ -17,11 +17,45 @@
   position: absolute;
 }
 
+@mixin circle() {
+  padding: 7px;
+  border-radius: 50%;
+  box-shadow: 0 1.28px 8px rgba(31, 35, 40, 0.2);
+}
+
 .pop-icons {
   margin-left: 5px;
   &--footnote {
-    margin: 3px;    
+    margin: 3px;   
+    @include circle;
   }
+  &--serv {
+    
+  }
+  &--more {
+    /*@include circle;*/
+  }
+  &--processes {
+    
+  }
+}
+
+.unicode-plus::after { 
+  content: '\002B'; 
+}
+
+.unicode-minus::after {   
+  content: '\2212';
+}
+
+.unicode-arrow-down::after { 
+  content: '\2193'; 
+  font-size: 22px;
+}
+
+.unicode-arrow-up::after {   
+  content: '\2191';
+  font-size: 22px;
 }
 
 .left {
@@ -32,13 +66,16 @@
   right: 0;
 }
 
+@mixin shadow() {
+  box-shadow: 0 1.28px 8px rgba(31, 35, 40, 0.2);
+}
 .footnote-btn {   
-  margin: 5px;
+  margin: 0;
   font-size: 16px;
   border-radius: 6px;
   padding: 0;
   color: #50a3ff; 
-  box-shadow: var(--shadow-floating-small, var(--color-overlay-shadow, 0 2px 8px rgba(31, 35, 40, 0.2), 0 16px 48px rgba(66, 74, 83, 0.2))); 
+  /*@include shadow; /**/
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;

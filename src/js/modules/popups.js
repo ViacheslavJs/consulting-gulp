@@ -2,9 +2,9 @@ export const popUp = (options) => {
   const clickName = 'js-popup'; // класс кнопок
   const popUpName = 'popup'; // класс всплывающих окон
   const popIcons = 'pop-icons'; // иконока-кнопка
-  const mainClass = 'fas'; // основной класс fontawesome
-  const iconClosed = 'fa-plus';
-  const iconOpen = 'fa-minus';
+  const mainFontAwesome = options.mainFontAwesome; // основной класс fontawesome
+  const iconClosed = options.iconClosed;
+  const iconOpen = options.iconOpen;
 
   const clickElement = `.${clickName}`;
   const popUpSelector = `.${popUpName}`;
@@ -47,7 +47,7 @@ export const popUp = (options) => {
     //console.log(icons);
     icons.forEach(icon => {
       //console.log(icon);
-      icon.classList.add(mainClass, iconClosed);
+      icon.classList.add(mainFontAwesome, iconClosed);
     });
   }
   
