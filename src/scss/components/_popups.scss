@@ -1,9 +1,14 @@
  /* Popup container */
 
 .js-popup {
-  position: relative;
+  position: relative; 
   display: inline-block;
   cursor: pointer;
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s
+  }
 }
 
 .popup {
@@ -17,6 +22,8 @@
   position: absolute;
 }
 
+/******************/
+
 @mixin circle() {
   padding: 7px;
   border-radius: 50%;
@@ -24,16 +31,40 @@
 }
 
 .pop-icons {
-  margin-left: 5px;
+  display: flex;
+  flex-direction: row-reverse; 
+  align-items: center; 
+  gap: 5px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #7294bb;
+  font-size: 16px;  
+  color: #7294bb;
+    
   &--footnote {
-    margin: 3px;   
     @include circle;
+    margin: 3px;    
+    border: none  !important;
   }
+  &--serv {
+    
+  }  
+  &--more {
+    /*@include circle;*/
+  }
+  &--processes {
+    
+  }
+}
+
+.pop-span {
+  font-weight: 400;
+  font-family: sans-serif;
   &--serv {
     
   }
   &--more {
-    /*@include circle;*/
+    
   }
   &--processes {
     
@@ -56,6 +87,16 @@
 .unicode-arrow-up::after {   
   content: '\2191';
   font-size: 22px;
+}
+
+.popBtnActive {
+  border: 1px solid silver;
+  color: silver !important; 
+}
+
+.popBtnInactive {  
+  border: 1px solid #7294bb;
+  color: #7294bb !important; 
 }
 
 .left {
@@ -109,7 +150,7 @@
   border-radius: 6px; 
   padding: 5px 8px; 
   color: #7294bb; 
-  border: 1px solid #7294bb;       
+  /*border: 1px solid #7294bb;*/       
   .show {
     visibility: visible;
     -webkit-animation: fadeIn 0.2s;
@@ -143,6 +184,8 @@
 
 /* serv content */
 .serv-pop-content {
+  
+  cursor: default;
   &__inner {
     display: flex; 
     flex-direction: row;
@@ -246,7 +289,7 @@
   font-size: 16px;
   border-radius: 6px;
   padding: 5px 8px;
-  border: 1px solid gray;
+  /*border: 1px solid gray;*/
   color: gray;     
   .show {
     visibility: visible;
@@ -281,7 +324,7 @@
   font-size: 16px;
   border-radius: 6px; 
   padding: 5px 8px;
-  border: 1px solid #eb4326;
+  /*border: 1px solid #eb4326;*/
   color: #eb4326; 
   .show {
     visibility: visible;

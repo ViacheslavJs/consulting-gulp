@@ -2,6 +2,7 @@ export const popUp = (options) => {
   const clickName = 'js-popup'; // класс кнопок
   const popUpName = 'popup'; // класс всплывающих окон
   const popIcons = 'pop-icons'; // иконока-кнопка
+  const popIconsSpan = 'pop-span';
   const mainFontAwesome = options.mainFontAwesome; // основной класс fontawesome
   const iconClosed = options.iconClosed;
   const iconOpen = options.iconOpen;
@@ -56,8 +57,9 @@ export const popUp = (options) => {
     parentElem.addEventListener('click', function(event) {
       const btn = this.querySelector(clickElement); 
       /*const isTargetBtn = event.target.classList.contains(clickName) || 
-            event.target.classList.contains(popIcons); // or */
-      const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}`); // or
+            event.target.classList.contains(popIcons) || 
+            event.target.classList.contains(popIconsSpan); // or */
+      const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}, .${popIconsSpan}`); // or
       //console.log(isTargetBtn); 
       const popup = this.querySelector(popUpSelector);
       if (isTargetBtn) {

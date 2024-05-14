@@ -41,14 +41,19 @@ lightbox();
 import { popUp } from "./modules/popups.js";
 popUp({
 
-  switchIcons: false,
-  mainFontAwesome: 'fas', 
-  iconClosed: 'fa-plus',
-  iconOpen: 'fa-minus',
+  switchIcons: true,
+  //mainFontAwesome: 'fas', 
+  //iconClosed: 'fa-plus',
+  //iconOpen: 'fa-minus',
+
   //iconClosed: 'unicode-plus',
   //iconOpen: 'unicode-minus',
+
   //iconClosed: 'unicode-arrow-down',
   //iconOpen: 'unicode-arrow-up',
+
+  iconClosed: 'popBtnInactive',
+  iconOpen: 'popBtnActive',
   
 });
 

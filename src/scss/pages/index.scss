@@ -261,8 +261,9 @@ section:nth-child(even) {
   &__buttons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; 
     align-items: center; 
+    gap: 10px;
     /*gap: 10px; /* if space-between; flex-start; or flex-end */ 
     flex-wrap: wrap;
     word-break: break-all; /* word-wrap: wrap; */  
