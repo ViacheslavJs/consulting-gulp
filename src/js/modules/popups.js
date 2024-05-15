@@ -56,11 +56,27 @@ export const popUp = (options) => {
   parentElems.forEach(parentElem => {
     parentElem.addEventListener('click', function(event) {
       const btn = this.querySelector(clickElement); 
-      /*const isTargetBtn = event.target.classList.contains(clickName) || 
-            event.target.classList.contains(popIcons) || 
-            event.target.classList.contains(popIconsSpan); // or */
-      const isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}, .${popIconsSpan}`); // or
-      //console.log(isTargetBtn); 
+
+      function setEvent() {
+        let isTargetBtn;      
+        if (options.clickOnlyIcon) {
+          isTargetBtn = event.target.matches(`.${popIcons}`); // or
+          //isTargetBtn = event.target.classList.contains(popIcons); // or
+        }
+        if (options.clickOnlySpan) {
+          isTargetBtn = event.target.matches(`.${popIconsSpan}`); // or
+          //isTargetBtn = event.target.classList.contains(popIconsSpan); // or
+        }
+        if (!options.clickOnlyIcon && !options.clickOnlySpan || 
+            options.clickOnlyIcon && options.clickOnlySpan) {
+          isTargetBtn = event.currentTarget.classList.contains(clickName); // click to parent and child
+        }
+        return isTargetBtn;
+      }
+
+      let isTargetBtn = setEvent();
+      console.log(isTargetBtn); 
+
       const popup = this.querySelector(popUpSelector);
       if (isTargetBtn) {
         // Toggle visibility of the clicked popup

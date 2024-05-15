@@ -30,8 +30,9 @@
   box-shadow: 0 1.28px 8px rgba(31, 35, 40, 0.2);
 }
 
+$pop-icons_display: flex; /* flex; inline-block; */
 .pop-icons {
-  display: flex;
+  display: $pop-icons_display;
   flex-direction: row-reverse; 
   align-items: center; 
   gap: 5px;
@@ -44,7 +45,7 @@
   &--footnote {
     @include circle;
     margin: 3px;    
-    border: none  !important;
+    border: none !important;
   }
   &--serv {
     

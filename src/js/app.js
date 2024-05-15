@@ -41,6 +41,9 @@ lightbox();
 import { popUp } from "./modules/popups.js";
 popUp({
 
+  clickOnlyIcon: false,
+  clickOnlySpan: false,
+
   switchIcons: true,
   //mainFontAwesome: 'fas', 
   //iconClosed: 'fa-plus',
