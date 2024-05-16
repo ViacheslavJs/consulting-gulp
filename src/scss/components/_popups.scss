@@ -72,22 +72,36 @@ $pop-icons_display: flex; /* flex; inline-block; */
   }
 }
 
+@mixin unicode_circle() {
+  display: inline-block;
+  width: 20px; 
+  height: 20px; 
+  line-height: 20px; 
+  text-align: center;
+  background: #eee;
+  border-radius: 50%;
+}
+
 .unicode-plus::after { 
-  content: '\002B'; 
+  content: '\002B';
+  @include unicode_circle;/**/
 }
 
 .unicode-minus::after {   
   content: '\2212';
+  @include unicode_circle;/**/
 }
 
 .unicode-arrow-down::after { 
-  content: '\2193'; 
-  font-size: 22px;
+  content: '\142F'; 
+  font-size: 16px;
+  @include unicode_circle;/**/
 }
 
 .unicode-arrow-up::after {   
-  content: '\2191';
-  font-size: 22px;
+  content: '\1431';
+  font-size: 16px;
+  @include unicode_circle;/**/
 }
 
 .popBtnActive {

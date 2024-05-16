@@ -56,6 +56,7 @@ export const popUp = (options) => {
   parentElems.forEach(parentElem => {
     parentElem.addEventListener('click', function(event) {
       const btn = this.querySelector(clickElement); 
+      const popup = this.querySelector(popUpSelector);
 
       function setEvent() {
         let isTargetBtn;      
@@ -67,17 +68,23 @@ export const popUp = (options) => {
           isTargetBtn = event.target.matches(`.${popIconsSpan}`); // or
           //isTargetBtn = event.target.classList.contains(popIconsSpan); // or
         }
+        /*
+        if ((!options.clickOnlyIcon && !options.clickOnlySpan || 
+            options.clickOnlyIcon && options.clickOnlySpan) &&
+            !popup.contains(event.target)) {
+          isTargetBtn = event.currentTarget.classList.contains(clickName); // click to parent and child
+        }
+        */
         if (!options.clickOnlyIcon && !options.clickOnlySpan || 
             options.clickOnlyIcon && options.clickOnlySpan) {
-          isTargetBtn = event.currentTarget.classList.contains(clickName); // click to parent and child
+          isTargetBtn = event.target.matches(`.${clickName}, .${popIcons}, .${popIconsSpan}`);
         }
         return isTargetBtn;
       }
 
       let isTargetBtn = setEvent();
       console.log(isTargetBtn); 
-
-      const popup = this.querySelector(popUpSelector);
+     
       if (isTargetBtn) {
         // Toggle visibility of the clicked popup
         popup.classList.toggle("show");
@@ -126,7 +133,7 @@ export const popUp = (options) => {
     });
 
     // Close the open popup if click was outside or on another button
-    if (!clickedOnButton && openPopup) {
+    if (options.closeClickOutside && !clickedOnButton && openPopup) {
       const icon = openPopup.parentElement.querySelector(`.${popIcons}`);
       if (options.switchIcons) {
         icon.classList.remove(iconOpen);

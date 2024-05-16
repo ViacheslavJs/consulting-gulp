@@ -41,6 +41,8 @@ lightbox();
 import { popUp } from "./modules/popups.js";
 popUp({
 
+  closeClickOutside: true,
+
   clickOnlyIcon: false,
   clickOnlySpan: false,
 
@@ -48,6 +50,8 @@ popUp({
   //mainFontAwesome: 'fas', 
   //iconClosed: 'fa-plus',
   //iconOpen: 'fa-minus',
+  //iconClosed: 'fa-angle-down',
+  //iconOpen: 'fa-angle-up',
 
   //iconClosed: 'unicode-plus',
   //iconOpen: 'unicode-minus',
