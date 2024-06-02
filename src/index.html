@@ -12,7 +12,7 @@
       <main class="main main--home">                              
         <!-- TODO - module top -->
           <section class="top" style="background-image: url(img/top-consult.jpg);">  
-            @@include('html/components/banner.html', {}) 
+            <!-- @@include('html/components/banner.html', {}) --> 
 
             <div class="top__right">
             </div> 
@@ -55,84 +55,15 @@
             </div><!-- container -->      
          
          <div class="container">  
-           <div class="about__buttons">               
-
-               <div class="js-popup" role="button" tabindex="0">
-                 <i class="pop-icons pop-icons--serv fas fa-wrench">
-                   <span class="pop-span pop-span--serv">Unsere Dienstleistungen</span>
-                 </i>
-                 <div class="popup serv-popup serv-pop-content">
-
-                   <div class="serv-pop-content__inner">
-                      <div class="serv-pop-content__circle">
-                        <span class="serv-pop-content__sector safari"></span>
-                        <span class="serv-pop-content__sector ie"></span>
-                        <span class="serv-pop-content__sector firefox"></span>
-                        <span class="serv-pop-content__sector chrome"></span>
-                      </div>                      
-                      <ul class="serv-pop-content__items">
-                       <li class="serv-pop-content__item">Chrome</li>
-                       <li class="serv-pop-content__item">Firefox</li>
-                       <li class="serv-pop-content__item">Internet Explorer</li>
-                       <li class="serv-pop-content__item">Safari</li>
-                     </ul>                                             
-                   </div>
-                 
-                 </div>
-               </div>        
-             
-               <button class="js-popup">
-                 <i class="pop-icons pop-icons--more fas fa-info-circle">
-                   <span class="pop-span pop-span--more">Information</span>
-                 </i>
-                 <span class="popup more-popup">Popup 3... asergvtrvgtr</span>
-               </button>            
-
-               <button class="js-popup">
-                 <i class="pop-icons pop-icons--processes far fa-sticky-note">
-                   <span class="pop-span pop-span--processes">Arbeitsablauf</span>
-                 </i>
-                 <span class="popup processes-popup">Popup 2...</span>
-               </button>                      
-
+           <div class="about__buttons">                                                  
+             @@include('html/components/popups.html', {}) 
            </div><!-- about__buttons --> 
          </div><!-- container -->    
                                 
           </section>
-          
-
-          <div class="container">
-            <button class="btn-one js-lightbox">ЗАМОВИТИ РЕМОНТ</button> 
-            <button class="btn-two js-lightbox">ЗАМОВИТИ РЕМОНТ</button> 
-            <button class="btn-three js-lightbox">Pictures</button> 
-            @@include('html/components/lightbox.html', {})          
-          </div>
-          
-          
-                         
-          
-
-<div class="container"><div id="acc1">
-            <button class="accordion about__accordion">Section 1</button>
-<div class="panel about__panel">
-  <p>Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.
-Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.</p>
-</div>
-
-<button class="accordion about__accordion">Section 2</button>
-<div class="panel about__panel">
-  <p>Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.</p>
-</div>
-
-<button class="accordion about__accordion">Section 3</button>
-<div class="panel about__panel">
-  <p>Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.</p>
-</div>            
-          </div></div> 
-
-
-
-
+                    
+          @@include('html/components/basket-product.html', {}) 
+                                  
 
 <!-- TODO - module bg-layer -->
           <section class="bg-layer"> <!--<img class="bg-title__img-bg" src="img/bg.jpg">-->
@@ -320,39 +251,11 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
               </div><!-- mod-tiles-box -->
             </div><!-- container -->
               <div class="container-swiperNews">
-              @@include('html/components/tape-carousel.html', {})
+              <!-- @@include('html/components/tape-carousel.html', {}) -->
               @@include('html/components/swiper-news.html', {})          
             </div><!-- container --> 
           </section><!-- module mod-tiles -->
           <!-- module mod-tiles -->
-        
-
-
-          
-           
-
-
-
-
-<div class="container"><div id="acc2">
-            <button class="accordion news__accordion">Section 1</button>
-<div class="panel news__panel">
-  <p>Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.</p>
-</div>
-
-<button class="accordion news__accordion">Section 2</button>
-<div class="panel news__panel">
-  <p>Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.</p>
-</div>
-
-<button class="accordion news__accordion">Section 3</button>
-<div class="panel news__panel">
-  <p>Interested in “developing” your developer skills? In W3Cx’s hands-on Professional Certificate Program, learn how to code the right way by creating Web sites and apps that use the latest Web standards.</p>
-</div>            
-          </div></div> 
-
-
-
           
           <section class="last-news">   
             <div class="container"> 
@@ -371,16 +274,13 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
                   Erfolgreicher Abschluss eines ERP-Systemimplementierungsprojekts: Wir haben erfolgreich ein Projekt zur Implementierung eines ERP-Systems für einen großen Kunden aus dem Fertigungssektor abgeschlossen. Das neue System half dabei, Ressourcenmanagementprozesse zu optimieren und die betriebliche Effizienz des Unternehmens zu verbessern. Dieses Projekt bestätigt unsere Fähigkeit, komplexe Lösungen in die Praxis umzusetzen und signifikante Ergebnisse für unsere Kunden zu erzielen.
                 </p>
               </div> 
+
+              
+@@include('html/components/lightbox.html', {}) 
             </div><!-- container -->      
                                                            
           </section>
-
-              
-
-          
-            
-          
-
+                                             
 <div class="container-swiperLatest">                            
               @@include('html/components/swiper-latest.html', {})                
             </div><!-- container -->
@@ -389,75 +289,15 @@ Interested in “developing” your developer skills? In W3Cx’s hands-on Profe
   
 <section class="questions"> 
 <div class="container">
-  <h2 class="questions__title">Uns wird oft gefragt...</h2><div id="acc3">
-            <button class="accordion other__accordion">"Welche spezifischen Dienstleistungen bieten Sie an?"</button>
-<div class="panel other__panel">
-  <p>Unsere Beratungsfirma bietet eine breite Palette von Dienstleistungen an, darunter strategische Planung, Prozessoptimierung, Geschäftsstrategieentwicklung, Mitarbeiterschulungen und Datenanalyse.</p>
-</div>
-
-<button class="accordion other__accordion">"Welche Erfahrung und Expertise haben Ihre Berater in unserer Branche?"</button>
-<div class="panel other__panel">
-  <p>Unsere Berater verfügen über umfangreiche Erfahrung in verschiedenen Branchen, was es uns ermöglicht, unseren Kunden qualitativ hochwertige Lösungen anzubieten, die ihren spezifischen Bedürfnissen und Herausforderungen entsprechen.</p>
-</div>
-
-<button class="accordion other__accordion">"Welche Ergebnisse haben Sie bereits für andere Kunden erzielt?"</button>
-<div class="panel other__panel">
-  <p>Wir sind stolz auf unsere Erfolge bei der Lösung komplexer Aufgaben für Kunden: Von der Umsatzsteigerung bis zur Optimierung von Arbeitsabläufen bringen unsere innovativen Ansätze echte Ergebnisse.</p>
-</div>            
-          </div></div>
+  <h2 class="questions__title">Uns wird oft gefragt...</h2>
+    @@include('html/components/accordions.html', {})
+  </div>
 </section>   
 
-<div class="container">
-            <!-- module tile-preview --> 
-            <div id="tilePreview" class="tile-preview for-effects">           
-              <div class="tile-preview__container">         
-          
-                <div class="tile-preview__container-left">                                                         
-                  <div class="tile-preview__img-box">                           
-                    <img class="tile-preview__img" src="img/preview/team-bg.webp" alt="colored cube">           
-                  </div>                           
-                  <div class="tile-preview__img-box">                          
-                    <img class="tile-preview__img" src="img/preview/team-1.webp" alt="colored cube">        
-                  </div>                                                                                                       
-                </div> 
-            
-                <div class="tile-preview__container-right">                                                                        
-                  <div class="tile-preview__img-box">                         
-                    <img class="tile-preview__img" src="img/preview/team-3.webp" alt="colored cube">              
-                  </div>                         
-                  <div class="tile-preview__img-box">                          
-                    <img class="tile-preview__img" src="img/preview/team-2.webp" alt="colored cube">              
-                  </div>                                                                                                       
-                </div>                                                                                       
-            
-              </div>
-    
-              <div class="tile-preview__container">         
-          
-                <div class="tile-preview__container-left">                                                         
-                  <div class="tile-preview__img-box">                           
-                    <img class="tile-preview__img" src="img/preview/team-4.webp" alt="colored cube">           
-                  </div>                           
-                  <div class="tile-preview__img-box">                          
-                    <img class="tile-preview__img" src="img/preview/consult-3.webp" alt="colored cube">        
-                  </div>                                                                                                       
-                </div> 
-            
-                <div class="tile-preview__container-right">                                                                        
-                  <div class="tile-preview__img-box">                         
-                    <img class="tile-preview__img" src="img/preview/consult-1.webp" alt="colored cube">              
-                  </div>                         
-                  <div class="tile-preview__img-box">                          
-                    <img class="tile-preview__img" src="img/preview/consult-2.webp" alt="colored cube">              
-                  </div>                                                                                                       
-                </div>                                                                                       
-            
-              </div>                                  
-            </div><!-- tile-preview -->
-            <!-- module tile-preview -->
-  
+          <div class="container">            
+            @@include('html/components/tile-lightbox.html', {})
           </div><!-- container -->
-          @@include('html/components/tile-lightbox.html', {})
+          
 
 
  @@include('html/section/mode.html', {})

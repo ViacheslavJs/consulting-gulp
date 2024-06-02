@@ -1,0 +1,39 @@
+.basket-icon {
+  position: absolute;  
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 26px;
+  margin: auto 0; 
+  color: silver;
+  cursor: pointer;  
+  @media screen and (max-width: $mobile-big_end-point) {
+    right: 75px;
+  }  
+}
+
+.basket-icon__icon {  
+  color: lighten(#e2b144, 7%);  
+  font-size: 26px;   
+}
+
+.basket-icon__circle {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  display: flex;
+  flex-direction: row;		
+  justify-content: center; 
+  align-items: center;
+  padding: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  font-size: 14px;
+  font-family: sans-serif; 
+  font-weight: 400;
+  background: #e8721b; 
+  color: #fff;               
+}
+
+

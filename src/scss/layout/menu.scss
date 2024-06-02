@@ -25,7 +25,9 @@
   justify-content: flex-start;          
   align-items: center;  
   @include menu;
-  width: $menu_width;  
+  width: $menu_width;
+  /*width: calc($menu_width - 26px); 
+  margin-right: calc(26px);*/ /* при наличии абс. поз. блока - передаём значение рх абс. поз. блока*/  
   font-weight: 400;
   /*font-size: 16px;*/                 
   @media screen and (max-width: $mobile-big_end-point) {
@@ -117,7 +119,8 @@
     bottom: 0;
     
     z-index: 50;
-    width: $mob-menu_width; 
+    width: $mob-menu_width;
+    margin-right: 0;   
     padding-top: 50px;
     box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
     -webkit-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);

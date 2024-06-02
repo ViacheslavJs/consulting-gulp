@@ -114,7 +114,8 @@ const itemImg = document.querySelectorAll(buttonClick);
 //console.log(itemImg.length);
 itemImg.forEach(s => {
   s.addEventListener('click', (event) => {
-    let sIndex = [...document.querySelectorAll(buttonClick)].indexOf(event.target);
+    //let sIndex = [...document.querySelectorAll(buttonClick)].indexOf(event.target);
+    let sIndex = [...document.querySelectorAll(buttonClick)].indexOf(event.currentTarget);
     //console.log(sIndex);
     showModalImg();
     counterImg(sIndex + 1);

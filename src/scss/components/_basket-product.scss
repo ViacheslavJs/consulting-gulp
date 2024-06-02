@@ -1,0 +1,242 @@
+#basket-items { 
+  display: flex;
+  flex-direction: row;		 
+  justify-content: center; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 15px; /* пространство между элементами по горизонтали */
+}     
+
+.elements {
+  background: #cef; 
+  width: 200px;       
+  margin: 5px;
+  padding: 10px;      
+}
+    
+
+#basket {
+  position: fixed;
+  top: $header_height;
+  right: 0;
+  z-index: 40;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #f6f6f8;
+  display: flex;  /* Changed to flex, but will control visibility with opacity */
+  flex-direction: column;
+  width: 300px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;  
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  @media screen and (max-width: $mobile-big_end-point) {
+    top: $header_mobile-height;
+  } 
+}
+
+#basket.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#basket.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*
+#basket {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;  /* Changed to flex, but will control visibility with transform 
+  flex-direction: column;
+  width: 300px;
+  height: 100vh;  /* Full height 
+  overflow: hidden;
+  transform: translateX(100%);  /* Initially hidden by moving it completely to the right 
+  transition: transform 0.5s ease-in-out;
+}
+
+#basket.show {
+  transform: translateX(0);  
+}
+
+#basket.hide {
+  transform: translateX(100%);  
+}
+*/
+    
+.basket-item {
+  display: flex; 
+  flex-direction: row;		 
+  justify-content: space-between; 
+  align-items: center;
+  gap: 7px; /* пространство между элементами по горизонтали */
+}
+
+.basket-item-info { 
+  /*align-self: center;*/
+  width: 100%;
+  color: #444445;
+}
+
+.basket-item-btn {
+  /*align-self: center;*/
+}
+    
+.basket-image {
+  display: block;
+  width: 50px; 
+  height: 100%; 
+  margin: auto 0;     
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: 100%; 
+}
+
+.button-delete {
+  padding: 5px;
+  border: none;
+  background: transparent;
+}
+
+.button-delete:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s; 
+}
+
+.font-awesome-icon.fas.fa-trash-alt { 
+  /*position: absolute;*/
+  font-size: 18px; 
+  color: #55b6f2; 
+}
+
+/*******************/
+.cards-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;		 
+  justify-content: center; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 15px; /* пространство между элементами по горизонтали */
+  padding-top: 25px;
+  
+}
+
+.title {
+  text-align: center;
+  color: #a9a9ac;
+}
+
+.card__span-name,
+.card__span-price {
+  color: #444445;
+}
+
+.card__name,
+.card__price {
+  color: #88888a;
+}
+
+.card__image-box {
+  position: relative;
+  display: block;  
+  width: 200px; 
+  height: 200px; 
+  margin: 20px 0;
+  object-fit: cover;                      
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.card__image {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__button {
+  font-size: 18px;
+  outline: none;
+  border: 1px solid #ffb328; /* none */
+  border-radius: 5px;
+  background: transparent;
+  padding: 3px 5px; /* 0 */
+  cursor: pointer;
+  color: #ffb328;
+}
+
+
+.cardPreviewBox {
+  position: relative;   
+}
+
+.cardPreviewSpan {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 8px;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.cardPreview:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.addCart {
+  font-size: 18px;
+  outline: none;
+  border: 1px solid #ffb328; /* none */
+  border-radius: 5px;
+  background: transparent;
+  padding: 3px 5px; /* 0 */
+  cursor: pointer;
+  color: #ffb328;
+}
+
+.viewed {
+  margin: 20px;
+}
+
+.scroll {
+  overflow-y: hidden;
+}
+
+.messages {
+  margin: 25px auto;
+}
+
+.top__image {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+ul, 
+li {
+  list-style: none;
+}
+
+.foods {
+  display: flex;
+  flex-wrap: wrap;
+   border: 1px solid red;
+  
+}
+
+

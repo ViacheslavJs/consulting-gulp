@@ -56,24 +56,53 @@ section:nth-child(even) {
   }  
 }
 
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  gap: 25px;
+  font-size: 16px; 
 
-.btn-one {
-  padding: 5px;   
-  background: #535353;
-  border: 1px solid blue;
-  color: #eb4326;
+  &__icon {
+    margin-right: 5px;
+  }
+
 }
-.btn-two {
-  padding: 5px;   
-  background: gray;
-  border: 1px solid blue;
-  color: green;
+
+.btns__name {
+  font-size: 16px; 
 }
-.btn-three {
+
+.btn-strategy,
+.btn-invest,
+.btn-contracts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  border-radius: 6px; 
+}
+
+.btn-strategy {
   padding: 5px;   
-  background: #ff0;
-  border: 1px solid blue;
-  color: blue;
+  /*border: 1px solid #4c6a92;*/
+  color: #4c6a92;
+  font-size: 1.7em; 
+}
+.btn-invest {
+  padding: 5px;     
+  /*border: 1px solid #96cbb3;*/
+  color: #96cbb3;
+  font-size: 1.7em; 
+}
+.btn-contracts {
+  padding: 5px;     
+  /*border: 1px solid  #e2b144;*/
+  color:  #e2b144;
+  font-size: 1.7em; 
 }
 
 .top {
@@ -320,139 +349,6 @@ section:nth-child(even) {
   } 
   
 }
-
-/***** TODO - module tile-preview *********************/
-/* стиль для квадратных(~ 200px) изображений */
-/*
-.tile-preview.for-effects {  
-  max-width: calc(100%);
-  margin: 50px auto;               
-  padding: 0px; 
-    
-}
-
-@media screen and (orientation: landscape) {
-
-.tile-preview__container {
-  display: flex;
-  flex-direction: row; 
-}
-
-.tile-preview__container-left,
-.tile-preview__container-right {
-  display: flex;
-  flex-direction: row; 
-}
-
-}
-
-@media screen and (orientation: portrait) {
-
-.tile-preview__container {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-}
-
-.tile-preview__container-left,
-.tile-preview__container-right {
-  display: flex;
-  flex-direction: row; 
-}
-
-}
-  
-.tile-preview__img-box {         
-  padding: 1px;
-  background: #f6f6f8;   
-}
- 
-.tile-preview__img { 
-  display: block;       
-  width: 100%;    
-  cursor: pointer;               
-  transition: 0.2s;  
-  
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.tile-preview__img:hover { 
-  opacity: 0.8;
-}
-*/
-/*****tile-preview*****/
-   
-
-/***** TODO - module tile-preview *********************/
-/* стиль для неизменённых(соотн. сторон как есть) изображений */
-.tile-preview {  
-  max-width: calc(100%);
-  margin: 0 auto;               
-  padding: 22px auto; 
-    
-  @media screen and (orientation: landscape) {
-    &__container {
-      display: flex;
-      flex-direction: row;     
-    }
-    &__container-left,
-    &__container-right {
-      display: flex;
-      flex-direction: row; 
-      width: 100%;
-    }
-  }
-
-  @media screen and (orientation: portrait) {
-    &__container {
-      display: flex;
-      flex-direction: column; 
-      justify-content: center;
-      align-items: center;
-    }
-    &__container-left,
-    &__container-right {
-      display: flex;
-      flex-direction: row; 
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width: 350px) {
-    &__container-left,
-    &__container-right {
-      display: flex;
-      flex-direction: column;
-    }
-  }
- 
-  &__img-box { 
-    width: 100%;  
-    margin: 0 auto;           
-    padding: 1px;
-    background: #f6f6f8;    
-  }
- 
-  &__img { 
-    display: block;       
-    max-width: 100%; 
-    height: 100%;
-    margin: 0 auto;          
-    object-fit: cover;  
-    
-    cursor: pointer;               
-    transition: 0.2s;  
-  
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-
-  &__img:hover { 
-    opacity: 0.7;
-  }
-
-}
-/***** module tile-preview *****/
 
 /***** TODO - module bg-layer *********************/
 /* module bg-layer */

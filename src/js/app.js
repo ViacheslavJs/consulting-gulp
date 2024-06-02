@@ -38,6 +38,9 @@ tileLightbox();
 import { lightbox } from "./modules/lightbox.js";
 lightbox();
 
+import { basket } from "./modules/basket.js";
+basket();
+
 import { popUp } from "./modules/popups.js";
 popUp({
 

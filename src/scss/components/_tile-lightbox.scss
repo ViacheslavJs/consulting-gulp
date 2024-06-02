@@ -1,3 +1,137 @@
+/***** TODO - module tile-preview *********************/
+/* стиль для квадратных(~ 200px) изображений */
+/*
+.tile-preview.for-effects {  
+  max-width: calc(100%);
+  margin: 50px auto;               
+  padding: 0px; 
+    
+}
+
+@media screen and (orientation: landscape) {
+
+.tile-preview__container {
+  display: flex;
+  flex-direction: row; 
+}
+
+.tile-preview__container-left,
+.tile-preview__container-right {
+  display: flex;
+  flex-direction: row; 
+}
+
+}
+
+@media screen and (orientation: portrait) {
+
+.tile-preview__container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+
+.tile-preview__container-left,
+.tile-preview__container-right {
+  display: flex;
+  flex-direction: row; 
+}
+
+}
+  
+.tile-preview__img-box {         
+  padding: 1px;
+  background: #f6f6f8;   
+}
+ 
+.tile-preview__img { 
+  display: block;       
+  width: 100%;    
+  cursor: pointer;               
+  transition: 0.2s;  
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.tile-preview__img:hover { 
+  opacity: 0.8;
+}
+*/
+/*****tile-preview*****/
+   
+
+/***** TODO - module tile-preview *********************/
+/* стиль для неизменённых(соотн. сторон как есть) изображений */
+.tile-preview {  
+  max-width: calc(100%);
+  margin: 0 auto;               
+  padding: 22px auto; 
+    
+  @media screen and (orientation: landscape) {
+    &__container {
+      display: flex;
+      flex-direction: row;     
+    }
+    &__container-left,
+    &__container-right {
+      display: flex;
+      flex-direction: row; 
+      width: 100%;
+    }
+  }
+
+  @media screen and (orientation: portrait) {
+    &__container {
+      display: flex;
+      flex-direction: column; 
+      justify-content: center;
+      align-items: center;
+    }
+    &__container-left,
+    &__container-right {
+      display: flex;
+      flex-direction: row; 
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    &__container-left,
+    &__container-right {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+ 
+  &__img-box { 
+    width: 100%;  
+    margin: 0 auto;           
+    padding: 1px;
+    background: #f6f6f8;    
+  }
+ 
+  &__img { 
+    display: block;       
+    max-width: 100%; 
+    height: 100%;
+    margin: 0 auto;          
+    object-fit: cover;  
+    
+    cursor: pointer;               
+    transition: 0.2s;  
+  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  &__img:hover { 
+    opacity: 0.7;
+  }
+
+}
+/***** module tile-preview *****/
+
+
 /*** layer, tile-modal ***/
 .tile-modal {
 
