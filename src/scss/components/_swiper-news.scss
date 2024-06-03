@@ -39,9 +39,6 @@
 }
 
 
-$slide-text_display: none; /* block; none; */
-$slide-link_display: none; /* block; none; */
-
 .news-slide {
   padding-top: 30px; 
   padding-bottom: 30px;
@@ -54,7 +51,6 @@ $slide-link_display: none; /* block; none; */
   } 
 
   &__link {
-    display: $slide-link_display;
     position: absolute;
     bottom: 8px;
     right: 0;
@@ -79,7 +75,6 @@ $slide-link_display: none; /* block; none; */
   }
 
   &__text {
-    display: $slide-text_display;
     font-size: 16px;
   }
 

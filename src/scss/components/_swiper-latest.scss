@@ -35,7 +35,6 @@
 }
 
 
-$slide-text_display: none; /* block; none; */
 .latest-slide {
   padding-top: 30px; 
   padding-bottom: 30px;
@@ -76,7 +75,6 @@ $slide-text_display: none; /* block; none; */
   }
 
   &__text {
-    display: $slide-text_display;
     font-size: 16px;
   }
 
