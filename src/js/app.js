@@ -4,7 +4,10 @@ import * as vjsFunctions from "./modules/functions.js";
 vjsFunctions.isWebp();
 
 import { scrolling } from "./modules/scrolling.js";
-scrolling();
+//scrolling();
+
+import { scrollingX } from "./modules/scrolling-x.js";
+scrollingX();
 
 import { messengers } from "./modules/messengers.js";
 messengers();

@@ -1,33 +1,37 @@
 
 export const messengers = () => {
 
-  // TODO - (messenger icons show/animation)
-  const messengersIcon = document.querySelector('.messengers-btn__base-icon');
-  const link = document.querySelectorAll('.messengers-btn__link');
+  const messengersBtn = document.getElementById('messengersBtn');
+  if (messengersBtn !== null) {
 
-  messengersIcon.addEventListener('click', (event) => {
-    messengersIcon.classList.toggle('base-icon-hidden');
-  });
+    // TODO - (messenger icons show/animation)
+    const messengersIcon = document.querySelector('.messengers-btn__base-icon');
+
+    const link = document.querySelectorAll('.messengers-btn__link');
+
+    messengersIcon.addEventListener('click', (event) => {
+      messengersIcon.classList.toggle('base-icon-hidden');
+    });
  
-  link.forEach(w => {
-    messengersIcon.addEventListener('click', showIcons);
+    link.forEach(w => {
+      messengersIcon.addEventListener('click', showIcons);
     
-    function showIcons() {
-      w.classList.toggle('icons-show');
+      function showIcons() {
+        w.classList.toggle('icons-show');
       
-      // TODO - optional - hide icons when clicked anywhere
-      document.addEventListener('click', (event) => {
-        let messengersBox = document.querySelector(".messengers-btn");
-        //console.log(!messengersBox.contains(event.target));
-        if (!messengersBox.contains(event.target)) {
-          w.classList.remove('icons-show');
-          messengersIcon.classList.remove('base-icon-hidden');      
-        }
-      });    
-    } 
+        // TODO - optional - hide icons when clicked anywhere
+        document.addEventListener('click', (event) => {
+          let messengersBox = document.querySelector(".messengers-btn");
+          //console.log(!messengersBox.contains(event.target));
+          if (!messengersBox.contains(event.target)) {
+            w.classList.remove('icons-show');
+            messengersIcon.classList.remove('base-icon-hidden');      
+          }
+        });    
+      } 
      
-  });
-  //
+    });
+    //
   
   // TODO - animation direction (using 'window.matchMedia' method )
   // https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries - description here
@@ -122,7 +126,9 @@ export const messengers = () => {
   //
   */
 
-} // iconsControl
+  } // if
+
+}; // iconsControl
 
 
 

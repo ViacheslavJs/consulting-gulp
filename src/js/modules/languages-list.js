@@ -1,4 +1,7 @@
 export const languagesList = () => {
+  const languages = document.getElementById('languages');
+  if (languages !== null) {
+
     const s1 = document.querySelector('.languages');
     const s2 = document.querySelector('.languages__submenu');
     const arrowIcon = document.querySelector('.languages__icon');
@@ -20,6 +23,9 @@ export const languagesList = () => {
             arrowIcon.classList.add('fa-chevron-down');
         }
     });
+
+  } // if
+
 };
 
 
