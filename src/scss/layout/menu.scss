@@ -128,7 +128,7 @@
     @media screen and (max-width: 345px) {
       width: 100%; /* if width: 320px */
     }
-    height: 100%;
+    height: calc(100% - $header_mobile-height);
     overflow: auto;    
     background: $mob-menu_bg;
 

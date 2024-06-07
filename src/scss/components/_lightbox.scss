@@ -1,30 +1,76 @@
-/*** layer, lightbox ***/
+/* btns */
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  gap: 25px;
+  font-size: 16px; 
 
+  &__icon {
+    margin-right: 5px;
+  }
 
-.test {
-  background: blue; 
-  word-wrap: wrap; 
-  word-break: break-all;
 }
 
-.test__title {
-  color: orange;
+.btns__name {
+  font-size: 16px; 
 }
 
-.test__text {
+.btn-strategy,
+.btn-invest,
+.btn-contracts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  border-radius: 6px; 
+}
+
+.btn-strategy {
+  padding: 5px;   
+  /*border: 1px solid #4c6a92;*/
+  color: #4c6a92;
+  font-size: 1.7em; 
+}
+.btn-invest {
+  padding: 5px;     
+  /*border: 1px solid #96cbb3;*/
+  color: #96cbb3;
+  font-size: 1.7em; 
+}
+.btn-contracts {
+  padding: 5px;     
+  /*border: 1px solid  #e2b144;*/
+  color:  #e2b144;
+  font-size: 1.7em; 
+}
+
+
+.invest {
+  padding: 10px;
   color: #fff;
+  &__title {
+    color: #fff;
+    font-weight: 500;
+  }
 }
 
-.testing {
-  background: red;
-  border: 1px solid #fff;
+.srategy {
+  &__title {
+    color: #4c6a92;
+    font-weight: 500;
+  }
+  &__text {
+    
+  }
 }
 
-.testing__title {
-  color: #000;
-}
 
 
+/*** layer, lightbox ***/
 .lightbox {
   
   &__layer {
@@ -34,7 +80,8 @@
     top: 0;
     left: 0;   
     right: 0;
-    bottom: 0;		    
+    bottom: 0;	
+    padding: 10px 0;	    
     /*background: rgba(256, 256, 256, 0.7);*/
     background: rgba(0, 0, 0, 0.7);   
     z-index: 200;	      
@@ -53,7 +100,7 @@
     max-width: calc(100% - 10px);      
     margin: auto;       
     z-index: 2;   
-  
+    cursor: default; 	
     opacity: 0;
     animation: lightbox-anim 0.5s forwards;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -64,14 +111,24 @@
     @media screen and (min-width: 955px) {  
       max-width: 720px;            
     } 
-    &--style_background {
-      background: blue; 
-    }
-    &--style_color {
-      border: 3px solid lime;
-    }
     &--form {
       padding: 25px 10px;
+    }
+    &--srategy {
+      width: 300px;
+      background: #fff;
+      @media screen and (min-width: 955px) {  
+        max-width: 720px;            
+      }
+    }
+    &--invest {
+      border: 2px solid #96cbb3;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    &--contracts {
+      border: 2px solid #fff;
+      border-radius: 5px;
     }
 
   }
@@ -105,20 +162,20 @@
       font-size: 37px;
       /*font-weight: bold;*/    
     }
-    
-    &--style_color {
-      color: magenta;
-    }
-    
-    &--style_bg {
-      background: #fff;
-    }
-
     &--form {
       top: calc(30px);
       right: calc(15px);	
     }
-
+    &--srategy {
+      color: #4c6a92;
+    }
+    &--invest {
+      color: #96cbb3;
+    }
+    &--contracts {
+      /*background: #fff;*/
+      color: #e2b144;
+    }    
   }
 	  
   &__close:hover,

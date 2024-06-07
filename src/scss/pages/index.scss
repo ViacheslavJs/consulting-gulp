@@ -56,55 +56,6 @@ section:nth-child(even) {
   }  
 }
 
-.btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;   
-  text-align: center;
-  gap: 25px;
-  font-size: 16px; 
-
-  &__icon {
-    margin-right: 5px;
-  }
-
-}
-
-.btns__name {
-  font-size: 16px; 
-}
-
-.btn-strategy,
-.btn-invest,
-.btn-contracts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;   
-  text-align: center;
-  border-radius: 6px; 
-}
-
-.btn-strategy {
-  padding: 5px;   
-  /*border: 1px solid #4c6a92;*/
-  color: #4c6a92;
-  font-size: 1.7em; 
-}
-.btn-invest {
-  padding: 5px;     
-  /*border: 1px solid #96cbb3;*/
-  color: #96cbb3;
-  font-size: 1.7em; 
-}
-.btn-contracts {
-  padding: 5px;     
-  /*border: 1px solid  #e2b144;*/
-  color:  #e2b144;
-  font-size: 1.7em; 
-}
-
 .top {
   position: relative;   
   display: flex;  
